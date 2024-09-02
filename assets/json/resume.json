@@ -1,12 +1,6 @@
 {
   "basics": {
-    "姓名": "杨雨薇 Yangyuwei",
-    "政治面貌": "共产党员",
-    "个人照片": "",
-    "邮箱": "yangyuwei_npu@163.com",
-    "电话": "180-9205-6025",
-    "学历": "硕士研究生",
-    "个人网站": "https://yywei0323.github.io/",
+    "name": "Yangyuwei",
     "summary": "A German-born theoretical physicist, widely ranked among the greatest and most influential scientists of all time",
     "location": {
       "address": "2712 Broadway St",
