@@ -2,7 +2,7 @@
 layout: post
 title: Build Pages
 date: 2023-09-01 20:40:16
-description: Build pages by Jekyll + Githubpages
+description: Build pages by Jekyll + Github pages
 tags: Environment-Building
 categories: Environment-Building
 featured: true

@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Gits Guild
-date: 2022-09-01 20:40:16
-description: Build pages by Jekyll + Githubpages
+title: Gits Useage
+date: 2023-09-05 20:40:16
+description: How to use git to manage code?
 tags: Tools
 categories: Environment-Building
 giscus_comments: true
@@ -92,19 +92,19 @@ toc:
    ```
 
 # 获取最新的更改
-
+```
 git pull origin master
-
+```
 # 添加所有更改
-
+```
 git add .
-
+```
 # 提交更改
-
+```
 git commit -m "Auto-update on $(date +'%Y-%m-%d %H:%M:%S')"
-
+```
 # 推送更改到远程仓库
-
+```
 git push origin master
 
 ```
@@ -120,30 +120,27 @@ chmod 777 logfile.log
 3. 增加自动执行的任务 
 - 使用`cron`来定时执行该脚本。首先，编辑`crontab`文件：
   
-  ```bash
-  crontab -e
-  ```
-- 添加如下条目来每天定时执行该脚本，例如每天凌晨 2 点执行
-  ```bash
-  
-  ## cron表达式
-* * * * * command_to_execute
-
-- - - - -
-
-| | | | |
-| | | | ----- 星期几 (0 - 7) (0 或 7 表示周日)
-| | | ------- 月份 (1 - 12)
-| | --------- 日期 (1 - 31)
-| ----------- 小时 (0 - 23)
-------------- 分钟 (0 - 59)
-
-0 2 * * * bash /xx/blog/autopush.sh >> /xx/blog/logfile.log 2>&1
-
+```bash
+crontab -e
 ```
+- 添加如下条目来每天定时执行该脚本，例如每天凌晨 2 点执行
+```markdown 
+<!-- cron表达式 -->
+<!-- # * * * * * command_to_execute
+<!--  - - - - - -->
+<!--  | | | | | -->
+<!--  | | | | ----- 星期几 (0 - 7) (0 或 7 表示周日) -->
+<!--  | | | ------- 月份 (1 - 12) -->
+<!--  | | --------- 日期 (1 - 31) -->
+<!--  | ----------- 小时 (0 - 23) -->
+<!--  ------------- 分钟 (0 - 59) --> -->
+```
+```bash
+0 2 * * * bash /xx/blog/autopush.sh >> /xx/blog/logfile.log 2>&1
+```
+
     - 0 2 * * * 表示每天凌晨 2:00 执行任务。
     - bash /opt/sharedVolumes/yangyuwei/blog/autopush.sh >> /opt/sharedVolumes/yangyuwei/blog/logfile.log 2>&1 将日志输出重定向到文件。需要确保该命令在用户下可以使用。
-```
 
 4. 权限问题
 - 由于该代码库是由jupyter notebook中yangyuwei用户编写 由root用户上传的；因此这里需要两个用户建立用户组，两个用户共享权限；

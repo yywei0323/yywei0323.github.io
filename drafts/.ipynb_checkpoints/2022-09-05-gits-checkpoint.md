@@ -138,9 +138,23 @@ chmod 777 logfile.log
 | ----------- 小时 (0 - 23)
 ------------- 分钟 (0 - 59)
 
-0 2 * * * bash /opt/sharedVolumes/yangyuwei/blog/autopush.sh >> /opt/sharedVolumes/yangyuwei/blog/logfile.log 2>&1
+0 2 * * * bash /xx/blog/autopush.sh >> /xx/blog/logfile.log 2>&1
 
 ```
     - 0 2 * * * 表示每天凌晨 2:00 执行任务。
-    - /path/to/logfile.log 2>&1 将日志输出重定向到文件。
+    - bash /opt/sharedVolumes/yangyuwei/blog/autopush.sh >> /opt/sharedVolumes/yangyuwei/blog/logfile.log 2>&1 将日志输出重定向到文件。需要确保该命令在用户下可以使用。
+```
+
+4. 权限问题
+- 由于该代码库是由jupyter notebook中yangyuwei用户编写 由root用户上传的；因此这里需要两个用户建立用户组，两个用户共享权限；
+- 新建用户组->将用户增加到用户组内->修改权限
+
+```bash
+##新建用户组
+sudo groupadd bloggroup
+##增加用户数目
+sudo usermod -aG bloggroup root
+sudo usermod -aG bloggroup yangyuwei
+##修改权限
+sudo chown -R yangyuwei:bloggroup /xx/blog
 ```
