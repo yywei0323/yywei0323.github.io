@@ -1,860 +1,323 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="https://yywei0323.github.io/feed.xml" rel="self" type="application/atom+xml"/><link href="https://yywei0323.github.io/" rel="alternate" type="text/html" hreflang="en"/><updated>2024-09-05T07:55:49+00:00</updated><id>https://yywei0323.github.io/feed.xml</id><title type="html">blank</title><subtitle>A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design. </subtitle><entry><title type="html">a post with pseudo code</title><link href="https://yywei0323.github.io/blog/2024/pseudocode/" rel="alternate" type="text/html" title="a post with pseudo code"/><published>2024-04-15T00:01:00+00:00</published><updated>2024-04-15T00:01:00+00:00</updated><id>https://yywei0323.github.io/blog/2024/pseudocode</id><content type="html" xml:base="https://yywei0323.github.io/blog/2024/pseudocode/"><![CDATA[<p>This is an example post with some pseudo code rendered by <a href="https://github.com/SaswatPadhi/pseudocode.js">pseudocode</a>. The example presented here is the same as the one in the <a href="https://saswat.padhi.me/pseudocode.js/">pseudocode.js</a> documentation, with only one simple but important change: everytime you would use <code class="language-plaintext highlighter-rouge">$</code>, you should use <code class="language-plaintext highlighter-rouge">$$</code> instead. Also, note that the <code class="language-plaintext highlighter-rouge">pseudocode</code> key in the front matter is set to <code class="language-plaintext highlighter-rouge">true</code> to enable the rendering of pseudo code. As an example, using this code:</p> <div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">```</span><span class="nl">pseudocode
-</span><span class="sb">% This quicksort algorithm is extracted from Chapter 7, Introduction to Algorithms (3rd edition)
-\begin{algorithm}
-\caption{Quicksort}
-\begin{algorithmic}
-\PROCEDURE{Quicksort}{$$A, p, r$$}
-    \IF{$$p &lt; r$$}
-        \STATE $$q = $$ \CALL{Partition}{$$A, p, r$$}
-        \STATE \CALL{Quicksort}{$$A, p, q - 1$$}
-        \STATE \CALL{Quicksort}{$$A, q + 1, r$$}
-    \ENDIF
-\ENDPROCEDURE
-\PROCEDURE{Partition}{$$A, p, r$$}
-    \STATE $$x = A[r]$$
-    \STATE $$i = p - 1$$
-    \FOR{$$j = p$$ \TO $$r - 1$$}
-        \IF{$$A[j] &lt; x$$}
-            \STATE $$i = i + 1$$
-            \STATE exchange
-            $$A[i]$$ with $$A[j]$$
-        \ENDIF
-        \STATE exchange $$A[i]$$ with $$A[r]$$
-    \ENDFOR
-\ENDPROCEDURE
-\end{algorithmic}
-\end{algorithm}</span>
-<span class="p">```</span>
-</code></pre></div></div> <p>Generates:</p> <pre><code class="language-pseudocode">% This quicksort algorithm is extracted from Chapter 7, Introduction to Algorithms (3rd edition)
-\begin{algorithm}
-\caption{Quicksort}
-\begin{algorithmic}
-\PROCEDURE{Quicksort}{$$A, p, r$$}
-    \IF{$$p &lt; r$$}
-        \STATE $$q = $$ \CALL{Partition}{$$A, p, r$$}
-        \STATE \CALL{Quicksort}{$$A, p, q - 1$$}
-        \STATE \CALL{Quicksort}{$$A, q + 1, r$$}
-    \ENDIF
-\ENDPROCEDURE
-\PROCEDURE{Partition}{$$A, p, r$$}
-    \STATE $$x = A[r]$$
-    \STATE $$i = p - 1$$
-    \FOR{$$j = p$$ \TO $$r - 1$$}
-        \IF{$$A[j] &lt; x$$}
-            \STATE $$i = i + 1$$
-            \STATE exchange
-            $$A[i]$$ with $$A[j]$$
-        \ENDIF
-        \STATE exchange $$A[i]$$ with $$A[r]$$
-    \ENDFOR
-\ENDPROCEDURE
-\end{algorithmic}
-\end{algorithm}
-</code></pre>]]></content><author><name></name></author><category term="sample-posts"/><category term="formatting"/><category term="code"/><summary type="html"><![CDATA[this is what included pseudo code could look like]]></summary></entry><entry><title type="html">a post with code diff</title><link href="https://yywei0323.github.io/blog/2024/code-diff/" rel="alternate" type="text/html" title="a post with code diff"/><published>2024-01-27T19:22:00+00:00</published><updated>2024-01-27T19:22:00+00:00</updated><id>https://yywei0323.github.io/blog/2024/code-diff</id><content type="html" xml:base="https://yywei0323.github.io/blog/2024/code-diff/"><![CDATA[<p>You can display diff code by using the regular markdown syntax:</p> <div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">```</span><span class="nl">diff
-</span><span class="gh">diff --git a/sample.js b/sample.js
-index 0000001..0ddf2ba
-</span><span class="gd">--- a/sample.js
-</span><span class="gi">+++ b/sample.js
-</span><span class="p">@@ -1 +1 @@</span>
-<span class="gd">-console.log("Hello World!")
-</span><span class="gi">+console.log("Hello from Diff2Html!")</span>
-<span class="p">```</span>
-</code></pre></div></div> <p>Which generates:</p> <div class="language-diff highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gh">diff --git a/sample.js b/sample.js
-index 0000001..0ddf2ba
-</span><span class="gd">--- a/sample.js
-</span><span class="gi">+++ b/sample.js
-</span><span class="p">@@ -1 +1 @@</span>
-<span class="gd">-console.log("Hello World!")
-</span><span class="gi">+console.log("Hello from Diff2Html!")
-</span></code></pre></div></div> <p>But this is difficult to read, specially if you have a large diff. You can use <a href="https://diff2html.xyz/">diff2html</a> to display a more readable version of the diff. For this, just use <code class="language-plaintext highlighter-rouge">diff2html</code> instead of <code class="language-plaintext highlighter-rouge">diff</code> for the code block language:</p> <div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">```</span><span class="nl">diff2html
-</span><span class="sb">diff --git a/sample.js b/sample.js
-index 0000001..0ddf2ba
---- a/sample.js
-+++ b/sample.js
-@@ -1 +1 @@
--console.log("Hello World!")
-+console.log("Hello from Diff2Html!")</span>
-<span class="p">```</span>
-</code></pre></div></div> <p>If we use a longer example, for example <a href="https://github.com/rtfpessoa/diff2html/commit/c2c253d3e3f8b8b267f551e659f72b44ca2ac927">this commit from diff2html</a>, it will generate the following output:</p> <pre><code class="language-diff2html">From 2aaae31cc2a37bfff83430c2c914b140bee59b6a Mon Sep 17 00:00:00 2001
-From: Rodrigo Fernandes &lt;rtfrodrigo@gmail.com&gt;
-Date: Sun, 9 Oct 2016 16:41:54 +0100
-Subject: [PATCH 1/2] Initial template override support
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="https://yywei0323.github.io/feed.xml" rel="self" type="application/atom+xml"/><link href="https://yywei0323.github.io/" rel="alternate" type="text/html" hreflang="en"/><updated>2024-09-05T16:00:59+00:00</updated><id>https://yywei0323.github.io/feed.xml</id><title type="html">blank</title><subtitle>A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design. </subtitle><entry><title type="html">链表理论2;24节点交换;19删除倒数n个节点;0207交叉链表;142环形链表</title><link href="https://yywei0323.github.io/blog/2023/algorithm_24+19+0207+142/" rel="alternate" type="text/html" title="链表理论2;24节点交换;19删除倒数n个节点;0207交叉链表;142环形链表"/><published>2023-09-11T20:40:16+00:00</published><updated>2023-09-11T20:40:16+00:00</updated><id>https://yywei0323.github.io/blog/2023/algorithm_24+19+0207+142</id><content type="html" xml:base="https://yywei0323.github.io/blog/2023/algorithm_24+19+0207+142/"><![CDATA[<blockquote> <p><a href="https://leetcode.cn/problems/swap-nodes-in-pairs/description/">383赎金信</a></p> <p><a href="https://programmercarl.com/0383.赎金信.html#思路">383赎金信代码随想录</a></p> <p><a href="https://leetcode.cn/problems/4sum-ii/">四数之和2</a></p> <p><a href="https://programmercarl.com/0454.四数相加II.html#算法公开课">四数之和2代码随想录</a></p> <p><a href="https://leetcode.cn/problems/intersection-of-two-linked-lists-lcci/description/">面试题02.07链表相交</a></p> <p><a href="https://programmercarl.com/面试题02.07.链表相交.html#其他语言版本">面试0207代码随想录链接</a></p> <p><a href="https://programmercarl.com/0142.环形链表II.html#思路">142环形链表题目链接</a></p> </blockquote> <h1 id="24题题解">24题题解</h1> <h2 id="题目">题目</h2> <p>给你一个链表，两两交换其中相邻的节点，并返回交换后链表的头节点。你必须在不修改节点内部的值的情况下完成本题（即，只能进行节点交换）。</p> <h2 id="解题思路">解题思路</h2> <ul> <li>确定使用虚拟头结点，防止头节点在循环中丢失；</li> <li>递归版本：永远只交换前两个节点 头节点循环；</li> <li>步骤清晰：确认curr是前一个节点还是后一个节点；</li> </ul> <h2 id="解决代码">解决代码</h2> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">swapPairs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">head</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ListNode</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ListNode</span><span class="p">]:</span>
+        <span class="n">dummy_node</span> <span class="o">=</span> <span class="n">ListNode</span><span class="p">(</span><span class="nb">next</span> <span class="o">=</span> <span class="n">head</span><span class="p">)</span>
+        <span class="n">pre</span> <span class="o">=</span> <span class="n">dummy_node</span>
+        <span class="n">curr</span> <span class="o">=</span> <span class="n">head</span>
 
----
- scripts/hulk.js                    |  4 ++--
- src/diff2html.js                   |  3 +--
- src/file-list-printer.js           | 11 ++++++++---
- src/hoganjs-utils.js               | 29 +++++++++++++++++------------
- src/html-printer.js                |  6 ++++++
- src/line-by-line-printer.js        |  6 +++++-
- src/side-by-side-printer.js        |  6 +++++-
- test/file-list-printer-tests.js    |  2 +-
- test/hogan-cache-tests.js          | 18 +++++++++++++++---
- test/line-by-line-tests.js         |  3 +--
- test/side-by-side-printer-tests.js |  3 +--
- 11 files changed, 62 insertions(+), 29 deletions(-)
+         <span class="k">if</span> <span class="ow">not</span> <span class="n">curr</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">curr</span><span class="p">.</span><span class="nb">next</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">head</span>
+        <span class="c1">###如果有少于2个节点 则不用循环
+</span>
+        <span class="k">while</span> <span class="n">curr</span> <span class="ow">and</span> <span class="n">curr</span><span class="p">.</span><span class="nb">next</span><span class="p">:</span>
+            <span class="n">tmp</span> <span class="o">=</span> <span class="n">curr</span><span class="p">.</span><span class="nb">next</span><span class="p">.</span><span class="nb">next</span>
+            <span class="c1">###固定下一个循环的起始
+</span>
+            <span class="n">pre</span><span class="p">.</span><span class="nb">next</span> <span class="o">=</span> <span class="n">curr</span><span class="p">.</span><span class="nb">next</span>
+            <span class="n">curr</span><span class="p">.</span><span class="nb">next</span><span class="p">.</span><span class="nb">next</span> <span class="o">=</span> <span class="n">curr</span>
+            <span class="n">curr</span><span class="p">.</span><span class="nb">next</span> <span class="o">=</span> <span class="n">tmp</span>
+            <span class="c1">###交换节点
+</span>
+            <span class="n">pre</span> <span class="o">=</span> <span class="n">curr</span>
+            <span class="n">curr</span> <span class="o">=</span> <span class="n">tmp</span>
+            <span class="c1">##循环推进
+</span>        <span class="k">return</span> <span class="n">dummy_node</span><span class="p">.</span><span class="nb">next</span>
+</code></pre></div></div> <p>##</p> <h1 id="19题题解">19题题解</h1> <h2 id="题目-1">题目</h2> <p><strong>给你一个链表，删除链表的倒数第 n 个结点，并且返回链表的头结点。</strong></p> <h2 id="题解">题解</h2> <ul> <li>双指针同时追逐</li> <li>保证慢指针少走一步：我选择的是让fast走head-none;slow走dummy_node-&gt;最后一个node</li> </ul> <h2 id="题解代码">题解代码</h2> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">removeNthFromEnd</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">head</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ListNode</span><span class="p">],</span> <span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ListNode</span><span class="p">]:</span>
+        <span class="n">dummy_node</span> <span class="o">=</span> <span class="n">ListNode</span><span class="p">(</span><span class="nb">next</span> <span class="o">=</span> <span class="n">head</span><span class="p">)</span>
+        <span class="n">slow</span> <span class="o">=</span> <span class="n">dummy_node</span>
+        <span class="n">fast</span> <span class="o">=</span> <span class="n">head</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+            <span class="n">fast</span> <span class="o">=</span> <span class="n">fast</span><span class="p">.</span><span class="nb">next</span>
+        <span class="k">while</span> <span class="n">fast</span><span class="p">:</span>
+            <span class="n">fast</span> <span class="o">=</span> <span class="n">fast</span><span class="p">.</span><span class="nb">next</span>
+            <span class="n">slow</span> <span class="o">=</span> <span class="n">slow</span><span class="p">.</span><span class="nb">next</span>
 
-diff --git a/scripts/hulk.js b/scripts/hulk.js
-index 5a793c18..a4b1a4d5 100755
---- a/scripts/hulk.js
-+++ b/scripts/hulk.js
-@@ -173,11 +173,11 @@ function namespace(name) {
- // write a template foreach file that matches template extension
- templates = extractFiles(options.argv.remain)
-   .map(function(file) {
--    var openedFile = fs.readFileSync(file, 'utf-8');
-+    var openedFile = fs.readFileSync(file, 'utf-8').trim();
-     var name;
-     if (!openedFile) return;
-     name = namespace(path.basename(file).replace(/\..*$/, ''));
--    openedFile = removeByteOrderMark(openedFile.trim());
-+    openedFile = removeByteOrderMark(openedFile);
-     openedFile = wrap(file, name, openedFile);
-     if (!options.outputdir) return openedFile;
-     fs.writeFileSync(path.join(options.outputdir, name + '.js')
-diff --git a/src/diff2html.js b/src/diff2html.js
-index 21b0119e..64e138f5 100644
---- a/src/diff2html.js
-+++ b/src/diff2html.js
-@@ -7,7 +7,6 @@
+        <span class="k">if</span> <span class="n">slow</span><span class="p">.</span><span class="nb">next</span><span class="p">:</span>
+            <span class="n">tmp</span> <span class="o">=</span> <span class="n">slow</span><span class="p">.</span><span class="nb">next</span>
+            <span class="n">slow</span><span class="p">.</span><span class="nb">next</span> <span class="o">=</span> <span class="n">slow</span><span class="p">.</span><span class="nb">next</span><span class="p">.</span><span class="nb">next</span>
+            <span class="n">tmp</span><span class="p">.</span><span class="nb">next</span> <span class="o">=</span> <span class="bp">None</span>
+            <span class="c1">##删除节点
+</span>
+        <span class="k">return</span> <span class="n">dummy_node</span><span class="p">.</span><span class="nb">next</span>
+</code></pre></div></div> <h1 id="面试0207">面试0207</h1> <h2 id="题目-2">题目</h2> <p><strong>给你两个单链表的头节点 headA 和 headB ，请你找出并返回两个单链表相交的起始节点。如果两个链表没有交点，返回 null 。</strong></p> <p><strong>图示两个链表在节点 c1 开始相交：</strong></p> <div class="row mt-3"> <div class="col-sm mt-3 mt-md-0"> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/2023-09-09/1-480.webp 480w,/assets/img/2023-09-09/1-800.webp 800w,/assets/img/2023-09-09/1-1400.webp 1400w," sizes="95vw" type="image/webp"/> <img src="/assets/img/2023-09-09/1.png" class="img-fluid rounded z-depth-1" width="100%" height="auto" loading="eager" onerror="this.onerror=null; $('.responsive-img-srcset').remove();"/> </picture> </figure> </div> </div> <p><strong>题目数据 保证 整个链式结构中不存在环。 注意，函数返回结果后，链表必须 保持其原始结构。</strong></p> <h2 id="题解-1">题解</h2> <ul> <li>思路一：最简单的思路是：通过遍历获取两条链表的长度；从共同长度倒着找相交节点如图</li> </ul> <div class="row mt-3"> <div class="col-sm mt-3 mt-md-0"> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/2023-09-01/2-480.webp 480w,/assets/img/2023-09-01/2-800.webp 800w,/assets/img/2023-09-01/2-1400.webp 1400w," sizes="95vw" type="image/webp"/> <img src="/assets/img/2023-09-01/2.png" class="img-fluid rounded z-depth-1" width="100%" height="auto" loading="eager" onerror="this.onerror=null; $('.responsive-img-srcset').remove();"/> </picture> </figure> </div> </div> <ul> <li>思路二：但更简便的方法是：轮流遍历两条链表 如果相遇，一定是节点，如果无法相遇，会在a+b时，返回None,则证明没中间节点</li> </ul> <h2 id="思路二代码">思路二代码</h2> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">getIntersectionNode</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">headA</span><span class="p">:</span> <span class="n">ListNode</span><span class="p">,</span> <span class="n">headB</span><span class="p">:</span> <span class="n">ListNode</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ListNode</span><span class="p">:</span>
+        <span class="n">A</span> <span class="o">=</span> <span class="n">headA</span>
+        <span class="n">B</span> <span class="o">=</span> <span class="n">headB</span>
+        <span class="k">while</span> <span class="n">A</span><span class="o">!=</span><span class="n">B</span><span class="p">:</span>
+            <span class="n">A</span> <span class="o">=</span> <span class="n">A</span><span class="p">.</span><span class="nb">next</span> <span class="k">if</span> <span class="n">A</span> <span class="k">else</span> <span class="n">headB</span>
+            <span class="n">B</span> <span class="o">=</span> <span class="n">B</span><span class="p">.</span><span class="nb">next</span> <span class="k">if</span> <span class="n">B</span> <span class="k">else</span> <span class="n">headA</span>
+        <span class="k">return</span> <span class="n">A</span>
+</code></pre></div></div> <h1 id="环形链表判断">环形链表判断</h1> <h2 id="题目-3">题目：</h2> <p><strong>给定一个链表的头节点<code class="language-plaintext highlighter-rouge">head</code>，返回链表开始入环的第一个节点。 如果链表无环，则返回 <code class="language-plaintext highlighter-rouge">null</code>。 如果链表中有某个节点，可以通过连续跟踪<code class="language-plaintext highlighter-rouge">next</code>指针再次到达，则链表中存在环。 为了表示给定链表中的环，评测系统内部使用整数<code class="language-plaintext highlighter-rouge">pos</code>来表示链表尾连接到链表中的位置（索引从 0 开始）。如果<code class="language-plaintext highlighter-rouge">pos</code>是 -1，则在该链表中没有环。注意<code class="language-plaintext highlighter-rouge">pos</code>不作为参数进行传递，仅仅是为了标识链表的实际情况。 不允许修改链表。</strong></p> <h2 id="题解-2">题解：</h2> <ul> <li>重点1：<strong>快慢指针速度相差1倍，一定能相遇。</strong>只要能相遇，则说明必定有环；</li> <li>重点2：<strong>快慢指针相遇后，从起点开始速度相同，相遇点即为起始点；</strong></li> <li>重点3：<strong>快慢指针相遇一定慢指针只差一环</strong> x=(n-1)(y+z)+z</li> </ul> <div class="row mt-3"> <div class="col-sm mt-3 mt-md-0"> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/2023-09-09/3-480.webp 480w,/assets/img/2023-09-09/3-800.webp 800w,/assets/img/2023-09-09/3-1400.webp 1400w," sizes="95vw" type="image/webp"/> <img src="/assets/img/2023-09-09/3.png" class="img-fluid rounded z-depth-1" width="100%" height="auto" loading="eager" onerror="this.onerror=null; $('.responsive-img-srcset').remove();"/> </picture> </figure> </div> </div> <h2 id="题解代码-1">题解代码：</h2> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">detectCycle</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">head</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ListNode</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ListNode</span><span class="p">]:</span>
+        <span class="n">dummy_node</span> <span class="o">=</span> <span class="n">ListNode</span><span class="p">(</span><span class="nb">next</span> <span class="o">=</span> <span class="n">head</span><span class="p">)</span>
+        <span class="n">slow</span> <span class="o">=</span> <span class="n">head</span>
+        <span class="n">fast</span> <span class="o">=</span> <span class="n">head</span>
+        <span class="k">while</span> <span class="n">fast</span> <span class="ow">and</span> <span class="n">fast</span><span class="p">.</span><span class="nb">next</span><span class="p">:</span>
+            <span class="n">fast</span> <span class="o">=</span> <span class="n">fast</span><span class="p">.</span><span class="nb">next</span><span class="p">.</span><span class="nb">next</span>
+            <span class="n">slow</span> <span class="o">=</span> <span class="n">slow</span><span class="p">.</span><span class="nb">next</span>
+            <span class="k">if</span> <span class="n">slow</span> <span class="o">==</span> <span class="n">fast</span><span class="p">:</span><span class="c1">##相遇有环
+</span>                <span class="n">fast</span> <span class="o">=</span> <span class="n">head</span>
+                <span class="k">while</span> <span class="n">fast</span><span class="o">!=</span><span class="n">slow</span><span class="p">:</span>
+                    <span class="n">fast</span> <span class="o">=</span> <span class="n">fast</span><span class="p">.</span><span class="nb">next</span>
+                    <span class="n">slow</span> <span class="o">=</span> <span class="n">slow</span><span class="p">.</span><span class="nb">next</span>
+                <span class="k">return</span> <span class="n">slow</span>
+        <span class="k">return</span> <span class="bp">None</span> <span class="c1">##不相遇无环
+</span></code></pre></div></div>]]></content><author><name></name></author><category term="Algorithm"/><summary type="html"><![CDATA[代码随想录算法训练营第七天]]></summary></entry><entry><title type="html">哈希表基础;242有效字母异位;349两个数组交集;202快乐数</title><link href="https://yywei0323.github.io/blog/2023/algorithm_242+349+202/" rel="alternate" type="text/html" title="哈希表基础;242有效字母异位;349两个数组交集;202快乐数"/><published>2023-09-09T20:40:16+00:00</published><updated>2023-09-09T20:40:16+00:00</updated><id>https://yywei0323.github.io/blog/2023/algorithm_242+349+202</id><content type="html" xml:base="https://yywei0323.github.io/blog/2023/algorithm_242+349+202/"><![CDATA[<blockquote> <p><a href="https://programmercarl.com/%E5%93%88%E5%B8%8C%E8%A1%A8%E7%90%86%E8%AE%BA%E5%9F%BA%E7%A1%80.html#%E5%93%88%E5%B8%8C%E8%A1%A8">哈希表基础理论</a> <a href="https://leetcode.cn/problems/valid-anagram/description/">242有效字母异位词题</a></p> <p><a href="https://programmercarl.com/0242.%E6%9C%89%E6%95%88%E7%9A%84%E5%AD%97%E6%AF%8D%E5%BC%82%E4%BD%8D%E8%AF%8D.html#%E7%AE%97%E6%B3%95%E5%85%AC%E5%BC%80%E8%AF%BE">242代码随想录解析</a></p> <p><a href="https://leetcode.cn/problems/intersection-of-two-arrays/">349两个数组的交集</a></p> <p>[349代码随想录解析] (https://programmercarl.com/0349.%E4%B8%A4%E4%B8%AA%E6%95%B0%E7%BB%84%E7%9A%84%E4%BA%A4%E9%9B%86.html#%E7%AE%97%E6%B3%95%E5%85%AC%E5%BC%80%E8%AF%BE)</p> <p><a href="https://leetcode.cn/problems/happy-number/">202快乐数</a></p> <p><a href="https://programmercarl.com/0202.%E5%BF%AB%E4%B9%90%E6%95%B0.html#%E5%85%B6%E4%BB%96%E8%AF%AD%E8%A8%80%E7%89%88%E6%9C%AC">202代码随想录解析</a></p> </blockquote> <h1 id="哈希表基础理论">哈希表基础理论</h1> <p><strong><em>当我们遇到了要快速判断一个元素是否出现集合里的时候，就要考虑哈希法</em></strong></p> <p>python中重要和字典相关的语句</p> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">num</span> <span class="o">=</span> <span class="n">res</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="n">num</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span>
+<span class="c1">##res.get(num,0) 如果存在num，则获取该数值，如果不存在该key，则赋值为0
+</span></code></pre></div></div> <h1 id="242有效字母异位词">242有效字母异位词</h1> <h2 id="题目">题目</h2> <p><strong>给定两个字符串 s 和 t ，编写一个函数来判断 t 是否是 s 的字母异位词。 注意：若 s 和 t 中每个字符出现的次数都相同，则称 s 和 t 互为字母异位词。</strong></p> <h2 id="题解">题解</h2> <p><strong>对于Python来说 有两种解决方案</strong></p> <ol> <li>直接采用python的collections.counter</li> <li>采用哈希表 统计26字母的频次</li> </ol> <h2 id="解法代码">解法代码</h2> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">###解法一：counter
+</span><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">isAnagram</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">s</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">t</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="n">s_dict</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">collections</span><span class="p">.</span><span class="n">Counter</span><span class="p">(</span><span class="n">s</span><span class="p">))</span>
+        <span class="n">t_dict</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">collections</span><span class="p">.</span><span class="n">Counter</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
+        <span class="k">if</span> <span class="n">s_dict</span><span class="o">==</span><span class="n">t_dict</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">True</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">False</span>
+</code></pre></div></div> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">##解法二
+</span><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">isAnagram</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">s</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">t</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="n">record</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="mi">26</span> <span class="c1">##哈希表
+</span>        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">s</span><span class="p">:</span>
+            <span class="n">record</span><span class="p">[</span><span class="nb">ord</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">-</span><span class="nb">ord</span><span class="p">(</span><span class="s">"a"</span><span class="p">)]</span><span class="o">+=</span><span class="mi">1</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">t</span><span class="p">:</span>
+            <span class="n">record</span><span class="p">[</span><span class="nb">ord</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">-</span><span class="nb">ord</span><span class="p">(</span><span class="s">"a"</span><span class="p">)]</span><span class="o">-=</span><span class="mi">1</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">record</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">i</span><span class="o">!=</span><span class="mi">0</span><span class="p">:</span>
+                <span class="k">return</span> <span class="bp">False</span>
+        <span class="k">return</span> <span class="bp">True</span>
+</code></pre></div></div> <h1 id="349两个数组的交集">349两个数组的交集</h1> <h2 id="题目-1">题目</h2> <p><strong>给定两个数组 nums1 和 nums2 ，返回 它们的 交集。 输出结果中的每个元素一定是 唯一 的。我们可以 不考虑输出结果的顺序 。</strong></p> <h2 id="题解-1">题解：</h2> <ol> <li>采用字典和集合统计</li> <li>直接使用集合</li> </ol> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">##用集合方法
+</span><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">intersection</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nums1</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="n">nums2</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">nums1</span><span class="p">)</span> <span class="o">&amp;</span> <span class="nb">set</span><span class="p">(</span><span class="n">nums2</span><span class="p">))</span>
+</code></pre></div></div> <h2 id="202快乐数">202快乐数</h2> <h3 id="题目-2">题目</h3> <p>**编写一个算法来判断一个数 n 是不是快乐数。 「快乐数」 定义为： - 对于一个正整数，每一次将该数替换为它每个位置上的数字的平方和。 - 然后重复这个过程直到这个数变为 1，也可能是 无限循环 但始终变不到 1。 - 如果这个过程 结果为 1，那么这个数就是快乐数。 - 如果 n 是 快乐数 就返回 true ；不是，则返回 false。 **</p> <h2 id="题解-2">题解</h2> <p>要点在<strong>如果不是快乐数，可能无限循环始终变不到1</strong> 因此，只需要判断结果是否有重复出现即可</p> <h2 id="解题代码">解题代码</h2> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">isHappy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="n">curr</span> <span class="o">=</span> <span class="n">n</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">while</span> <span class="n">curr</span><span class="o">!=</span><span class="mi">1</span> <span class="ow">and</span> <span class="n">res</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="n">curr</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span><span class="o">&lt;</span><span class="mi">2</span><span class="p">:</span>
+            <span class="n">num</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">str</span><span class="p">(</span><span class="n">curr</span><span class="p">):</span>
+                <span class="n">num</span> <span class="o">=</span> <span class="n">num</span> <span class="o">+</span> <span class="nb">int</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
+            <span class="n">curr</span> <span class="o">=</span> <span class="n">num</span>
+            <span class="n">res</span><span class="p">[</span><span class="n">num</span><span class="p">]</span> <span class="o">=</span> <span class="n">res</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="n">num</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span>
+        <span class="k">if</span> <span class="n">curr</span><span class="o">==</span><span class="mi">1</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">True</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">False</span>
+</code></pre></div></div>]]></content><author><name></name></author><category term="Algorithm"/><summary type="html"><![CDATA[代码随想录算法训练营第六天]]></summary></entry><entry><title type="html">哈希表基础;242有效字母异位;349两个数组交集;202快乐数</title><link href="https://yywei0323.github.io/blog/2023/algorithm_/" rel="alternate" type="text/html" title="哈希表基础;242有效字母异位;349两个数组交集;202快乐数"/><published>2023-09-09T20:40:16+00:00</published><updated>2023-09-09T20:40:16+00:00</updated><id>https://yywei0323.github.io/blog/2023/algorithm_</id><content type="html" xml:base="https://yywei0323.github.io/blog/2023/algorithm_/"><![CDATA[<blockquote> <p><a href="https://programmercarl.com/%E5%93%88%E5%B8%8C%E8%A1%A8%E7%90%86%E8%AE%BA%E5%9F%BA%E7%A1%80.html#%E5%93%88%E5%B8%8C%E8%A1%A8">哈希表基础理论</a> <a href="https://leetcode.cn/problems/valid-anagram/description/">242有效字母异位词题</a></p> <p><a href="https://programmercarl.com/0242.%E6%9C%89%E6%95%88%E7%9A%84%E5%AD%97%E6%AF%8D%E5%BC%82%E4%BD%8D%E8%AF%8D.html#%E7%AE%97%E6%B3%95%E5%85%AC%E5%BC%80%E8%AF%BE">242代码随想录解析</a></p> <p><a href="https://leetcode.cn/problems/intersection-of-two-arrays/">349两个数组的交集</a></p> <p>[349代码随想录解析] (https://programmercarl.com/0349.%E4%B8%A4%E4%B8%AA%E6%95%B0%E7%BB%84%E7%9A%84%E4%BA%A4%E9%9B%86.html#%E7%AE%97%E6%B3%95%E5%85%AC%E5%BC%80%E8%AF%BE)</p> <p><a href="https://leetcode.cn/problems/happy-number/">202快乐数</a></p> <p><a href="https://programmercarl.com/0202.%E5%BF%AB%E4%B9%90%E6%95%B0.html#%E5%85%B6%E4%BB%96%E8%AF%AD%E8%A8%80%E7%89%88%E6%9C%AC">202代码随想录解析</a></p> </blockquote> <h1 id="哈希表基础理论">哈希表基础理论</h1> <p><strong><em>当我们遇到了要快速判断一个元素是否出现集合里的时候，就要考虑哈希法</em></strong></p> <p>python中重要和字典相关的语句</p> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">num</span> <span class="o">=</span> <span class="n">res</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="n">num</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span>
+<span class="c1">##res.get(num,0) 如果存在num，则获取该数值，如果不存在该key，则赋值为0
+</span></code></pre></div></div> <h1 id="242有效字母异位词">242有效字母异位词</h1> <h2 id="题目">题目</h2> <p><strong>给定两个字符串 s 和 t ，编写一个函数来判断 t 是否是 s 的字母异位词。 注意：若 s 和 t 中每个字符出现的次数都相同，则称 s 和 t 互为字母异位词。</strong></p> <h2 id="题解">题解</h2> <p><strong>对于Python来说 有两种解决方案</strong></p> <ol> <li>直接采用python的collections.counter</li> <li>采用哈希表 统计26字母的频次</li> </ol> <h2 id="解法代码">解法代码</h2> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">###解法一：counter
+</span><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">isAnagram</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">s</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">t</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="n">s_dict</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">collections</span><span class="p">.</span><span class="n">Counter</span><span class="p">(</span><span class="n">s</span><span class="p">))</span>
+        <span class="n">t_dict</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">collections</span><span class="p">.</span><span class="n">Counter</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
+        <span class="k">if</span> <span class="n">s_dict</span><span class="o">==</span><span class="n">t_dict</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">True</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">False</span>
+</code></pre></div></div> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">##解法二
+</span><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">isAnagram</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">s</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">t</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="n">record</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="mi">26</span> <span class="c1">##哈希表
+</span>        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">s</span><span class="p">:</span>
+            <span class="n">record</span><span class="p">[</span><span class="nb">ord</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">-</span><span class="nb">ord</span><span class="p">(</span><span class="s">"a"</span><span class="p">)]</span><span class="o">+=</span><span class="mi">1</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">t</span><span class="p">:</span>
+            <span class="n">record</span><span class="p">[</span><span class="nb">ord</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">-</span><span class="nb">ord</span><span class="p">(</span><span class="s">"a"</span><span class="p">)]</span><span class="o">-=</span><span class="mi">1</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">record</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">i</span><span class="o">!=</span><span class="mi">0</span><span class="p">:</span>
+                <span class="k">return</span> <span class="bp">False</span>
+        <span class="k">return</span> <span class="bp">True</span>
+</code></pre></div></div> <h1 id="349两个数组的交集">349两个数组的交集</h1> <h2 id="题目-1">题目</h2> <p><strong>给定两个数组 nums1 和 nums2 ，返回 它们的 交集。 输出结果中的每个元素一定是 唯一 的。我们可以 不考虑输出结果的顺序 。</strong></p> <h2 id="题解-1">题解：</h2> <ol> <li>采用字典和集合统计</li> <li>直接使用集合</li> </ol> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">##用集合方法
+</span><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">intersection</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nums1</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="n">nums2</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">nums1</span><span class="p">)</span> <span class="o">&amp;</span> <span class="nb">set</span><span class="p">(</span><span class="n">nums2</span><span class="p">))</span>
+</code></pre></div></div> <h2 id="202快乐数">202快乐数</h2> <h3 id="题目-2">题目</h3> <p>**编写一个算法来判断一个数 n 是不是快乐数。 「快乐数」 定义为： - 对于一个正整数，每一次将该数替换为它每个位置上的数字的平方和。 - 然后重复这个过程直到这个数变为 1，也可能是 无限循环 但始终变不到 1。 - 如果这个过程 结果为 1，那么这个数就是快乐数。 - 如果 n 是 快乐数 就返回 true ；不是，则返回 false。 **</p> <h2 id="题解-2">题解</h2> <p>要点在<strong>如果不是快乐数，可能无限循环始终变不到1</strong> 因此，只需要判断结果是否有重复出现即可</p> <h2 id="解题代码">解题代码</h2> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">isHappy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="n">curr</span> <span class="o">=</span> <span class="n">n</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">while</span> <span class="n">curr</span><span class="o">!=</span><span class="mi">1</span> <span class="ow">and</span> <span class="n">res</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="n">curr</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span><span class="o">&lt;</span><span class="mi">2</span><span class="p">:</span>
+            <span class="n">num</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">str</span><span class="p">(</span><span class="n">curr</span><span class="p">):</span>
+                <span class="n">num</span> <span class="o">=</span> <span class="n">num</span> <span class="o">+</span> <span class="nb">int</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
+            <span class="n">curr</span> <span class="o">=</span> <span class="n">num</span>
+            <span class="n">res</span><span class="p">[</span><span class="n">num</span><span class="p">]</span> <span class="o">=</span> <span class="n">res</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="n">num</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span>
+        <span class="k">if</span> <span class="n">curr</span><span class="o">==</span><span class="mi">1</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">True</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">False</span>
+</code></pre></div></div>]]></content><author><name></name></author><category term="Algorithm"/><summary type="html"><![CDATA[代码随想录算法训练营第六天]]></summary></entry><entry><title type="html">链表基础理论</title><link href="https://yywei0323.github.io/blog/2023/algorithm_203+707+206/" rel="alternate" type="text/html" title="链表基础理论"/><published>2023-09-08T20:40:16+00:00</published><updated>2023-09-08T20:40:16+00:00</updated><id>https://yywei0323.github.io/blog/2023/algorithm_203+707+206</id><content type="html" xml:base="https://yywei0323.github.io/blog/2023/algorithm_203+707+206/"><![CDATA[<blockquote> <p><a href="https://programmercarl.com/%E9%93%BE%E8%A1%A8%E7%90%86%E8%AE%BA%E5%9F%BA%E7%A1%80.html">链表基础理论</a></p> <p><a href="https://leetcode.cn/problems/remove-linked-list-elements/">203题目链接</a></p> <p><a href="https://programmercarl.com/0203.%E7%A7%BB%E9%99%A4%E9%93%BE%E8%A1%A8%E5%85%83%E7%B4%A0.html#%E7%AE%97%E6%B3%95%E5%85%AC%E5%BC%80%E8%AF%BE">203代码随想录</a></p> <p><a href="https://leetcode.cn/problems/design-linked-list/description/">707题目链接</a></p> <p><a href="https://programmercarl.com/0707.%E8%AE%BE%E8%AE%A1%E9%93%BE%E8%A1%A8.html#%E5%85%B6%E4%BB%96%E8%AF%AD%E8%A8%80%E7%89%88%E6%9C%AC">707代码随想录</a></p> <p><a href="https://leetcode.cn/problems/reverse-linked-list/submissions/535001438/">206题目链接</a></p> <p><a href="https://programmercarl.com/0206.%E7%BF%BB%E8%BD%AC%E9%93%BE%E8%A1%A8.html#%E5%85%B6%E4%BB%96%E8%AF%AD%E8%A8%80%E7%89%88%E6%9C%AC">206代码随想录</a></p> </blockquote> <h2 id="链表基础知识笔记">链表基础知识笔记</h2> <p><strong>链表示意图</strong></p> <div class="row mt-3"> <div class="col-sm mt-3 mt-md-0"> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/2023-09-08/1-480.webp 480w,/assets/img/2023-09-08/1-800.webp 800w,/assets/img/2023-09-08/1-1400.webp 1400w," sizes="95vw" type="image/webp"/> <img src="/assets/img/2023-09-08/1.png" class="img-fluid rounded z-depth-1" width="100%" height="auto" loading="eager" onerror="this.onerror=null; $('.responsive-img-srcset').remove();"/> </picture> </figure> </div> </div> <h3 id="单链表如上图">单链表（如上图）</h3> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">linknode</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">val</span><span class="p">,</span><span class="nb">next</span> <span class="o">=</span> <span class="bp">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">val</span> <span class="o">=</span> <span class="n">val</span>
+        <span class="bp">self</span><span class="p">.</span><span class="nb">next</span> <span class="o">=</span> <span class="nb">next</span>
+</code></pre></div></div> <h3 id="双链表">双链表</h3> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">blinknode</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">val</span><span class="p">,</span><span class="nb">next</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span><span class="n">front</span> <span class="o">=</span> <span class="bp">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">val</span> <span class="o">=</span> <span class="n">val</span>
+        <span class="bp">self</span><span class="p">.</span><span class="nb">next</span> <span class="o">=</span> <span class="nb">next</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">front</span> <span class="o">=</span> <span class="n">front</span>
+</code></pre></div></div> <h3 id="链表操作">链表操作</h3> <h4 id="删除节点">删除节点</h4> <div class="row mt-3"> <div class="col-sm mt-3 mt-md-0"> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/2023-09-08/2-480.webp 480w,/assets/img/2023-09-08/2-800.webp 800w,/assets/img/2023-09-08/2-1400.webp 1400w," sizes="95vw" type="image/webp"/> <img src="/assets/img/2023-09-08/2.png" class="img-fluid rounded z-depth-1" width="100%" height="auto" loading="eager" onerror="this.onerror=null; $('.responsive-img-srcset').remove();"/> </picture> </figure> </div> </div> <h4 id="加入节点">加入节点</h4> <div class="row mt-3"> <div class="col-sm mt-3 mt-md-0"> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/2023-09-08/3-480.webp 480w,/assets/img/2023-09-08/3-800.webp 800w,/assets/img/2023-09-08/3-1400.webp 1400w," sizes="95vw" type="image/webp"/> <img src="/assets/img/2023-09-08/3.png" class="img-fluid rounded z-depth-1" width="100%" height="auto" loading="eager" onerror="this.onerror=null; $('.responsive-img-srcset').remove();"/> </picture> </figure> </div> </div> <h2 id="203移除链表元素">203.移除链表元素</h2> <h2 id="题目">题目</h2> <p><strong>给你一个链表的头节点 head 和一个整数 val ，请你删除链表中所有满足 Node.val == val 的节点，并返回 新的头节点 。</strong></p> <h3 id="重点内容">重点内容</h3> <ul> <li>设置虚拟头节点，在删除头节点时会更便利；</li> <li>考虑链表遍历的条件和范围</li> </ul> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">removeElements</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">head</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ListNode</span><span class="p">],</span> <span class="n">val</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ListNode</span><span class="p">]:</span>
+    <span class="n">node_1</span> <span class="o">=</span> <span class="n">ListNode</span><span class="p">()</span>
+    <span class="n">node_1</span><span class="p">.</span><span class="nb">next</span> <span class="o">=</span> <span class="n">head</span>
+    <span class="n">curr</span> <span class="o">=</span> <span class="n">node_1</span>
+    <span class="k">while</span> <span class="n">curr</span><span class="p">.</span><span class="nb">next</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">curr</span><span class="p">.</span><span class="nb">next</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">curr</span><span class="p">.</span><span class="nb">next</span><span class="p">.</span><span class="n">val</span> <span class="o">==</span> <span class="n">val</span><span class="p">:</span>
+                <span class="n">curr</span><span class="p">.</span><span class="nb">next</span> <span class="o">=</span> <span class="n">curr</span><span class="p">.</span><span class="nb">next</span><span class="p">.</span><span class="nb">next</span>
+                <span class="k">continue</span>
+        <span class="n">curr</span> <span class="o">=</span> <span class="n">curr</span><span class="p">.</span><span class="nb">next</span>
+    <span class="k">return</span> <span class="n">node_1</span><span class="p">.</span><span class="nb">next</span>
+</code></pre></div></div> <h2 id="707-设计链表">707 设计链表</h2> <h3 id="题目-1">题目</h3> <p><strong>你可以选择使用单链表或者双链表，设计并实现自己的链表。 单链表中的节点应该具备两个属性：val 和 next 。val 是当前节点的值，next 是指向下一个节点的指针/引用。 如果是双向链表，则还需要属性 prev 以指示链表中的上一个节点。假设链表中的所有节点下标从 0 开始。</strong></p> <p><strong>实现 MyLinkedList 类：</strong></p> <ul> <li>MyLinkedList() 初始化 MyLinkedList 对象。</li> <li>int get(int index) 获取链表中下标为 index 的节点的值。如果下标无效，则返回 -1 。</li> <li>void addAtHead(int val) 将一个值为 val 的节点插入到链表中第一个元素之前。在插入完成后，新节点会成为链表的第一个节点。</li> <li>void addAtTail(int val) 将一个值为 val 的节点追加到链表中作为链表的最后一个元素。</li> <li>void addAtIndex(int index, int val) 将一个值为 val 的节点插入到链表中下标为 index 的节点之前。如果 index 等于链表的长度，那么该节点会被追加到链表的末尾。如果 index 比长度更大，该节点将 不会插入 到链表中。</li> <li>void deleteAtIndex(int index) 如果下标有效，则删除链表中下标为 index 的节点。</li> </ul> <h3 id="重点内容-1">重点内容：</h3> <ul> <li>基本可以自己复现</li> <li>问题1：可以设置self.size 遍历循环</li> <li>遍历到index前一个和index当前那一个的公式不同</li> <li>get 和 delete的范围[0,size) add_index范围是[0,index]</li> </ul> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">curr</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">dummy_node</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">curr</span><span class="p">):</span>
+    <span class="n">curr</span> <span class="o">=</span> <span class="n">curr</span><span class="p">.</span><span class="nb">next</span>
+<span class="c1">### 结束时 curr为index的前一个
+</span></code></pre></div></div> <h3 id="最终解答">最终解答：</h3> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Node</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">val</span><span class="o">=</span><span class="mi">0</span> <span class="p">,</span><span class="nb">next</span> <span class="o">=</span> <span class="bp">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">val</span> <span class="o">=</span> <span class="n">val</span>
+        <span class="bp">self</span><span class="p">.</span><span class="nb">next</span> <span class="o">=</span> <span class="nb">next</span>
 
- (function() {
-   var diffParser = require('./diff-parser.js').DiffParser;
--  var fileLister = require('./file-list-printer.js').FileListPrinter;
-   var htmlPrinter = require('./html-printer.js').HtmlPrinter;
+<span class="k">class</span> <span class="nc">MyLinkedList</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">headnode</span> <span class="o">=</span> <span class="n">Node</span><span class="p">()</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">size</span> <span class="o">=</span> <span class="mi">0</span>
 
-   function Diff2Html() {
-@@ -43,7 +42,7 @@
+    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">index</span><span class="o">&lt;</span><span class="mi">0</span> <span class="ow">or</span> <span class="n">index</span><span class="o">&gt;=</span><span class="bp">self</span><span class="p">.</span><span class="n">size</span><span class="p">:</span>
+            <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
+        <span class="n">curr</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">headnode</span><span class="p">.</span><span class="nb">next</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">index</span><span class="p">):</span>
+            <span class="n">curr</span> <span class="o">=</span> <span class="n">curr</span><span class="p">.</span><span class="nb">next</span>
+        <span class="k">return</span> <span class="n">curr</span><span class="p">.</span><span class="n">val</span>
 
-     var fileList = '';
-     if (configOrEmpty.showFiles === true) {
--      fileList = fileLister.generateFileList(diffJson, configOrEmpty);
-+      fileList = htmlPrinter.generateFileListSummary(diffJson, configOrEmpty);
-     }
+    <span class="k">def</span> <span class="nf">addAtHead</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">val</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">node_1</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">val</span><span class="p">)</span>
+        <span class="n">node_1</span><span class="p">.</span><span class="nb">next</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">headnode</span><span class="p">.</span><span class="nb">next</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">headnode</span><span class="p">.</span><span class="nb">next</span> <span class="o">=</span> <span class="n">node_1</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">size</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">size</span><span class="o">+</span><span class="mi">1</span>
 
-     var diffOutput = '';
-diff --git a/src/file-list-printer.js b/src/file-list-printer.js
-index e408d9b2..1e0a2c61 100644
---- a/src/file-list-printer.js
-+++ b/src/file-list-printer.js
-@@ -8,11 +8,16 @@
- (function() {
-   var printerUtils = require('./printer-utils.js').PrinterUtils;
+    <span class="k">def</span> <span class="nf">addAtTail</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">val</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">node_1</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">val</span><span class="p">)</span>
+        <span class="n">curr</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">headnode</span>
+        <span class="k">while</span> <span class="n">curr</span><span class="p">.</span><span class="nb">next</span><span class="p">:</span>
+            <span class="n">curr</span> <span class="o">=</span> <span class="n">curr</span><span class="p">.</span><span class="nb">next</span>
+        <span class="n">curr</span><span class="p">.</span><span class="nb">next</span> <span class="o">=</span> <span class="n">node_1</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">size</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">size</span><span class="o">+</span><span class="mi">1</span>
 
--  var hoganUtils = require('./hoganjs-utils.js').HoganJsUtils;
-+  var hoganUtils;
-+
-   var baseTemplatesPath = 'file-summary';
-   var iconsBaseTemplatesPath = 'icon';
+    <span class="k">def</span> <span class="nf">addAtIndex</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">val</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">index</span><span class="o">&lt;</span><span class="mi">0</span> <span class="ow">or</span> <span class="n">index</span><span class="o">&gt;</span><span class="bp">self</span><span class="p">.</span><span class="n">size</span><span class="p">:</span>
+            <span class="k">return</span> 
+        <span class="n">node_1</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">val</span><span class="p">)</span>
+        <span class="n">curr</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">headnode</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">index</span><span class="p">):</span>
+            <span class="n">curr</span> <span class="o">=</span> <span class="n">curr</span><span class="p">.</span><span class="nb">next</span>
+        <span class="n">node_1</span><span class="p">.</span><span class="nb">next</span> <span class="o">=</span> <span class="n">curr</span><span class="p">.</span><span class="nb">next</span>
+        <span class="n">curr</span><span class="p">.</span><span class="nb">next</span> <span class="o">=</span> <span class="n">node_1</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">size</span> <span class="o">=</span><span class="bp">self</span><span class="p">.</span><span class="n">size</span><span class="o">+</span><span class="mi">1</span>
 
--  function FileListPrinter() {
-+  function FileListPrinter(config) {
-+    this.config = config;
-+
-+    var HoganJsUtils = require('./hoganjs-utils.js').HoganJsUtils;
-+    hoganUtils = new HoganJsUtils(config);
-   }
 
-   FileListPrinter.prototype.generateFileList = function(diffFiles) {
-@@ -38,5 +43,5 @@
-     });
-   };
+    <span class="k">def</span> <span class="nf">deleteAtIndex</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">index</span><span class="o">&gt;=</span><span class="mi">0</span> <span class="ow">and</span> <span class="n">index</span><span class="o">&lt;</span><span class="bp">self</span><span class="p">.</span><span class="n">size</span><span class="p">:</span>
+            <span class="n">curr</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">headnode</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">index</span><span class="p">):</span>
+                <span class="n">curr</span> <span class="o">=</span> <span class="n">curr</span><span class="p">.</span><span class="nb">next</span>
+            <span class="n">curr</span><span class="p">.</span><span class="nb">next</span> <span class="o">=</span> <span class="n">curr</span><span class="p">.</span><span class="nb">next</span><span class="p">.</span><span class="nb">next</span>
+            <span class="bp">self</span><span class="p">.</span><span class="n">size</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">size</span><span class="o">-</span><span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span>
+</code></pre></div></div> <h2 id="206反转链表">206反转链表</h2> <h3 id="题目-2">题目</h3> <p><strong>给你单链表的头节点 head ，请你反转链表，并返回反转后的链表。</strong></p> <h3 id="重点">重点：</h3> <ul> <li>第一遍没做出来，但其实只要想起来<strong>双指针</strong>就会了;</li> <li>python的迭代和递归区别不太大</li> </ul> <h3 id="最终解答-1">最终解答：</h3> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">reverseList</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">head</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ListNode</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ListNode</span><span class="p">]:</span>
+        <span class="n">curr</span> <span class="o">=</span> <span class="n">head</span>
+        <span class="n">pre</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="k">while</span> <span class="n">curr</span><span class="p">:</span>
+            <span class="n">tmp</span> <span class="o">=</span> <span class="n">curr</span><span class="p">.</span><span class="nb">next</span>
+            <span class="n">curr</span><span class="p">.</span><span class="nb">next</span> <span class="o">=</span> <span class="n">pre</span>
+            <span class="n">pre</span> <span class="o">=</span> <span class="n">curr</span>
+            <span class="n">curr</span> <span class="o">=</span> <span class="n">tmp</span>
+        <span class="k">return</span> <span class="n">pre</span>
+</code></pre></div></div>]]></content><author><name></name></author><category term="Algorithm"/><summary type="html"><![CDATA[代码随想录算法训练营第三天]]></summary></entry><entry><title type="html">977.有序数组的平方；209.长度最小的子序列</title><link href="https://yywei0323.github.io/blog/2023/algorithm_977+209/" rel="alternate" type="text/html" title="977.有序数组的平方；209.长度最小的子序列"/><published>2023-09-07T20:40:16+00:00</published><updated>2023-09-07T20:40:16+00:00</updated><id>https://yywei0323.github.io/blog/2023/algorithm_977+209</id><content type="html" xml:base="https://yywei0323.github.io/blog/2023/algorithm_977+209/"><![CDATA[<blockquote> <p><a href="https://leetcode.cn/problems/squares-of-a-sorted-array/">977题链接</a></p> <p><a href="https://programmercarl.com/0977.%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E7%9A%84%E5%B9%B3%E6%96%B9.html#%E6%80%9D%E8%B7%AF">代码随想录链接</a></p> <p><a href="https://leetcode.cn/problems/minimum-size-subarray-sum/submissions/534560400/">209题链接</a></p> <p><a href="https://programmercarl.com/0209.%E9%95%BF%E5%BA%A6%E6%9C%80%E5%B0%8F%E7%9A%84%E5%AD%90%E6%95%B0%E7%BB%84.html#%E5%85%B6%E4%BB%96%E8%AF%AD%E8%A8%80%E7%89%88%E6%9C%AC">代码随想解答</a></p> </blockquote> <h2 id="今日任务">今日任务</h2> <ol> <li>八股背诵：HTTP部分：HTTPS和HTTP区别、UDP和TCP（拥塞控制、滑动窗口）、</li> <li>代码随想录补打卡day1、day2；</li> <li>毕设实验；</li> </ol> <h2 id="第一遍解题难点">第一遍解题难点：</h2> <ul> <li>整理出来了实际是比较绝对值大小；</li> <li>没有考虑到<strong>两边大中间小</strong>的特征，惯性思维想遍历，没想到可以从<strong>两端</strong>使用指针；</li> <li>在思考如何赋值的时候忘记了<strong>python复制语句</strong>；</li> </ul> <h2 id="最终解答">最终解答：</h2> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">sortedSquares</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nums</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="p">[</span><span class="s">'inf'</span><span class="p">]</span><span class="o">*</span><span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span> <span class="c1">##先创建相应的空间
+</span>    <span class="n">l</span><span class="p">,</span><span class="n">r</span><span class="p">,</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span> <span class="c1">##l,r分别为两端指针；i是赋值指针
+</span>    <span class="k">while</span> <span class="n">l</span><span class="o">&lt;=</span><span class="n">r</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="n">nums</span><span class="p">[</span><span class="n">l</span><span class="p">])</span><span class="o">&gt;=</span><span class="nb">abs</span><span class="p">(</span><span class="n">nums</span><span class="p">[</span><span class="n">r</span><span class="p">]):</span>
+            <span class="n">res</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">nums</span><span class="p">[</span><span class="n">l</span><span class="p">]</span><span class="o">*</span><span class="n">nums</span><span class="p">[</span><span class="n">l</span><span class="p">]</span>
+            <span class="n">l</span> <span class="o">=</span> <span class="n">l</span><span class="o">+</span><span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">res</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">nums</span><span class="p">[</span><span class="n">r</span><span class="p">]</span><span class="o">*</span><span class="n">nums</span><span class="p">[</span><span class="n">r</span><span class="p">]</span>
+            <span class="n">r</span> <span class="o">=</span> <span class="n">r</span><span class="o">-</span><span class="mi">1</span>
+            <span class="n">i</span> <span class="o">=</span> <span class="n">i</span><span class="o">-</span><span class="mi">1</span>
+            <span class="k">return</span> <span class="n">res</span>
+</code></pre></div></div> <h2 id="209">209</h2> <h3 id="第一遍解题难点-1">第一遍解题难点：</h3> <ul> <li>理解错了题意：是大于等于的连续子数组，不是等于的连续子数组；</li> <li>双指针的滑动窗口：只动了一边，效率低；</li> </ul> <h3 id="最终解答-1">最终解答</h3> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">minSubArrayLen</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">target</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">nums</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="n">left</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">right</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">min_len</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="s">'inf'</span><span class="p">)</span>
+        <span class="n">sum_</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">while</span> <span class="n">right</span><span class="o">&lt;</span><span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">):</span>
+            <span class="n">sum_</span><span class="o">=</span><span class="n">sum_</span><span class="o">+</span><span class="n">nums</span><span class="p">[</span><span class="n">right</span><span class="p">]</span>
 
--  module.exports.FileListPrinter = new FileListPrinter();
-+  module.exports.FileListPrinter = FileListPrinter;
- })();
-diff --git a/src/hoganjs-utils.js b/src/hoganjs-utils.js
-index 9949e5fa..0dda08d7 100644
---- a/src/hoganjs-utils.js
-+++ b/src/hoganjs-utils.js
-@@ -8,18 +8,19 @@
- (function() {
-   var fs = require('fs');
-   var path = require('path');
--
-   var hogan = require('hogan.js');
+            <span class="k">while</span> <span class="n">sum_</span><span class="o">&gt;=</span><span class="n">target</span><span class="p">:</span>
+                <span class="n">min_len</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">min_len</span><span class="p">,</span><span class="n">right</span><span class="o">-</span><span class="n">left</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+                <span class="n">sum_</span> <span class="o">=</span> <span class="n">sum_</span><span class="o">-</span><span class="n">nums</span><span class="p">[</span><span class="n">left</span><span class="p">]</span>
+                <span class="n">left</span> <span class="o">=</span> <span class="n">left</span><span class="o">+</span><span class="mi">1</span>
+            <span class="n">right</span> <span class="o">=</span> <span class="n">right</span><span class="o">+</span><span class="mi">1</span>
 
-   var hoganTemplates = require('./templates/diff2html-templates.js');
+        <span class="k">if</span> <span class="n">min_len</span><span class="o">==</span><span class="nb">float</span><span class="p">(</span><span class="s">'inf'</span><span class="p">):</span>
+            <span class="k">return</span> <span class="mi">0</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">min_len</span>
+</code></pre></div></div>]]></content><author><name></name></author><category term="Algorithm"/><summary type="html"><![CDATA[代码随想录算法训练营第二天]]></summary></entry><entry><title type="html">704.二分查找(红蓝模板法); 27. 移除元素(双指针法)</title><link href="https://yywei0323.github.io/blog/2023/algorithm_704+27/" rel="alternate" type="text/html" title="704.二分查找(红蓝模板法); 27. 移除元素(双指针法)"/><published>2023-09-06T20:40:16+00:00</published><updated>2023-09-06T20:40:16+00:00</updated><id>https://yywei0323.github.io/blog/2023/algorithm_704+27</id><content type="html" xml:base="https://yywei0323.github.io/blog/2023/algorithm_704+27/"><![CDATA[<blockquote> <p><a href="https://leetcode.cn/problems/binary-search/description/">704题链接</a> <a href="https://programmercarl.com/0704.%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE.html#%E5%85%B6%E4%BB%96%E8%AF%AD%E8%A8%80%E7%89%88%E6%9C%AC">二分查找</a></p> <p>二分查找红蓝法笔记： <a href="https://www.bilibili.com/video/BV1d54y1q7k7/?spm_id_from=333.999.0.0&amp;vd_source=15bd621bc528dc5761beb2a6637d341c">二分查找为什么总是写错？_哔哩哔哩_bilibili</a></p> <p><a href="https://leetcode.cn/problems/find-first-and-last-position-of-element-in-sorted-array/solutions/967331/lan-hong-hua-fen-fa-dan-mo-ban-miao-sha-e7r40/">34. 在排序数组中查找元素的第一个和最后一个位置 - 力扣（LeetCode）</a></p> <p><a href="https://leetcode.cn/problems/remove-element/submissions/534439498/">27题链接</a></p> <p><a href="https://programmercarl.com/0027.%E7%A7%BB%E9%99%A4%E5%85%83%E7%B4%A0.html#%E5%85%B6%E4%BB%96%E8%AF%AD%E8%A8%80%E7%89%88%E6%9C%AC">移除元素</a></p> </blockquote> <h2 id="74题二分查找红蓝法步骤">74题：二分查找红蓝法步骤：</h2> <ol> <li>建模</li> <li>套入算法</li> <li>增加判断标准</li> </ol> <h2 id="建模示例">建模示例：</h2> <ol> <li>起始状态</li> </ol> <div class="row mt-3"> <div class="col-sm mt-3 mt-md-0"> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/2023-09-01/1-480.webp 480w,/assets/img/2023-09-01/1-800.webp 800w,/assets/img/2023-09-01/1-1400.webp 1400w," sizes="95vw" type="image/webp"/> <img src="/assets/img/2023-09-01/1.png" class="img-fluid rounded z-depth-1" width="100%" height="auto" loading="eager" onerror="this.onerror=null; $('.responsive-img-srcset').remove();"/> </picture> </figure> </div> </div> <ol> <li>终止状态</li> </ol> <div class="row mt-3"> <div class="col-sm mt-3 mt-md-0"> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/2023-09-01/2-480.webp 480w,/assets/img/2023-09-01/2-800.webp 800w,/assets/img/2023-09-01/2-1400.webp 1400w," sizes="95vw" type="image/webp"/> <img src="/assets/img/2023-09-01/2.png" class="img-fluid rounded z-depth-1" width="100%" height="auto" loading="eager" onerror="this.onerror=null; $('.responsive-img-srcset').remove();"/> </picture> </figure> </div> </div> <div class="row mt-3"> <div class="col-sm mt-3 mt-md-0"> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/2023-09-01/2-480.webp 480w,/assets/img/2023-09-01/2-800.webp 800w,/assets/img/2023-09-01/2-1400.webp 1400w," sizes="95vw" type="image/webp"/> <img src="/assets/img/2023-09-01/2.png" class="img-fluid rounded z-depth-1" width="100%" height="auto" loading="eager" onerror="this.onerror=null; $('.responsive-img-srcset').remove();"/> </picture> </figure> </div> </div> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">##查找的范围为[0,N)
+</span><span class="n">l</span><span class="p">,</span><span class="n">r</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">N</span>
+<span class="k">while</span> <span class="p">(</span><span class="n">l</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">!=</span><span class="n">r</span><span class="p">:</span> <span class="c1">##循环终止的条件：红蓝边界重合；左右指针相邻
+</span>	<span class="n">mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">l</span><span class="o">+</span><span class="n">r</span><span class="p">)</span><span class="o">//</span><span class="mi">2</span> <span class="c1">##mid是左右指针的靠前的中间值
+</span>	<span class="k">if</span> <span class="n">fuhe蓝色条件A</span><span class="p">:</span>
+		<span class="n">l</span> <span class="o">=</span> <span class="n">mid</span>
+	<span class="k">else</span><span class="p">:</span>
+		<span class="n">r</span> <span class="o">=</span> <span class="n">mid</span>
+<span class="c1">##最终返回什么值由模型决定
+</span></code></pre></div></div> <h2 id="注意事项">注意事项：</h2> <ol> <li>循环停止的判断条件：统一写成 l+1&lt;r。 如果跨数组，或者跨区域，则必须选择l+1&lt;r （例题：<a href="https://leetcode.cn/problems/maximum-distance-between-a-pair-of-values/">1855. 下标对中的最大距离</a>）</li> <li>搜索完毕的特殊状态：l=首元素下标-1；全部为红色</li> </ol> <h2 id="技巧">技巧：</h2> <ol> <li><strong>排序</strong>（对数组首先进行排序 排序完成后再进行查找 可以根据条件决定排序的方向） <ol> <li>例题：<a href="https://leetcode.cn/problems/special-array-with-x-elements-greater-than-or-equal-x/">1608. 特殊数组的特征值</a></li> </ol> </li> <li><strong>构造二分查找区间：</strong>target和整数直接的必要条件关系，利用关系进行夹逼 <ol> <li>例题：<a href="https://leetcode.cn/problems/sqrtx/">69. x 的平方根</a></li> </ol> </li> <li>区间边界设定和边界值颜色是否确定有关；不确定就移动一格</li> <li><strong>逐步缩小二分查找区间</strong> <ol> <li>例题：<a href="https://leetcode.cn/problems/maximum-distance-between-a-pair-of-values/">1855. 下标对中的最大距离</a>、<a href="https://leetcode.cn/problems/sum-of-mutated-array-closest-to-target/">1300. 转变数组后最接近目标值的数组和</a></li> </ol> </li> <li><strong>多维度向量二分查找：一个向量为主键进行排序</strong> <ol> <li>主维度从小到大排序，从属维度从大到小排序 例如：<a href="https://leetcode.cn/problems/russian-doll-envelopes/">354. 俄罗斯套娃信封问题</a></li> <li>主维度从小到大排序，从属维度动态插入排序 例如：<a href="https://leetcode.cn/problems/closest-room/">1847. 最近的房间</a></li> </ol> </li> </ol> <h2 id="27题双指针法">27题：双指针法</h2> <h3 id="快慢指针-模板-忘了-所以第一遍写的很困难">快慢指针 模板 忘了 所以第一遍写的很困难</h3> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">fast</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1">##快指针 用于遍历
+</span><span class="n">slow</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1">##慢指针 用于筛选条件（一般为符合条件的）
+</span><span class="k">while</span> <span class="n">fast</span><span class="o">&lt;</span><span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">nums</span><span class="p">[</span><span class="n">fast</span><span class="p">]</span><span class="o">!=</span><span class="n">val</span><span class="p">:</span> <span class="c1">##满足条件
+</span>        <span class="n">nums</span><span class="p">[</span><span class="n">slow</span><span class="p">]</span> <span class="o">=</span> <span class="n">nums</span><span class="p">[</span><span class="n">fast</span><span class="p">]</span>
+        <span class="n">slow</span> <span class="o">=</span> <span class="n">slow</span><span class="o">+</span><span class="mi">1</span> <span class="c1">##slow慢就是因为要符合条件才移动
+</span>    <span class="n">fast</span> <span class="o">=</span> <span class="n">fast</span><span class="o">+</span><span class="mi">1</span> <span class="c1">##fast快是因为任何时间都会移动
+</span></code></pre></div></div>]]></content><author><name></name></author><category term="Algorithm"/><summary type="html"><![CDATA[代码随想录算法训练营第一天]]></summary></entry><entry><title type="html">Gits Useage</title><link href="https://yywei0323.github.io/blog/2023/gits/" rel="alternate" type="text/html" title="Gits Useage"/><published>2023-09-05T20:40:16+00:00</published><updated>2023-09-05T20:40:16+00:00</updated><id>https://yywei0323.github.io/blog/2023/gits</id><content type="html" xml:base="https://yywei0323.github.io/blog/2023/gits/"><![CDATA[<h2 id="1git-ssh密钥配置">1.GIT SSH密钥配置</h2> <ol> <li> <p>生成ssh密钥1</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh-keygen <span class="nt">-t</span> ed25519 <span class="nt">-C</span> <span class="s2">"2286988225@qq.com"</span>
+</code></pre></div> </div> </li> <li> <p>添加SSH密钥到SSH-Agent</p> <ul> <li> <p>启动SSH-Agent</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">eval</span> <span class="s2">"</span><span class="si">$(</span>ssh-agent <span class="nt">-s</span><span class="si">)</span><span class="s2">"</span>
+</code></pre></div> </div> </li> <li> <p>添加生成的SSH私钥到SSH-Agent</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh-add ~/.ssh/id_ed25519
+</code></pre></div> </div> </li> </ul> </li> <li> <p>将SSH公钥添加到Github</p> <ul> <li> <p>打印公钥</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cat</span> ~/.ssh/id_ed25519.pub
+</code></pre></div> </div> </li> <li> <p>复制公钥到<code class="language-plaintext highlighter-rouge">Settings &gt; SSH and GPG keys &gt; New SSH key</code></p> </li> </ul> </li> <li> <p>验证SSH配置</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh <span class="nt">-T</span> git@github.com
+</code></pre></div> </div> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   - 如果成功连接，你将看到类似于以下的输出：
+</code></pre></div> </div> </li> </ol> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  Hi username! You<span class="s1">'ve successfully authenticated, but GitHub does not provide shell access.
+</span></code></pre></div></div> <ol> <li> <p>启动SSH配置</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Start-Service ssh-agent
+</code></pre></div> </div> </li> </ol> <h2 id="2git仓库克隆并提交">2.GIT仓库克隆并提交</h2> <ol> <li> <p>克隆仓库</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone git@github.com:your_username/your_repository.git
+</code></pre></div> </div> </li> <li> <p>编辑并提交更改</p> <ul> <li>在本地对仓库进行修改。</li> <li>提交更改：</li> </ul> </li> </ol> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  git add <span class="nb">.</span>
+  git commit <span class="nt">-m</span> <span class="s2">"Update blog and content"</span>
+</code></pre></div></div> <ol> <li>将本地更改推送到 GitHub： <ul> <li>将本地更改推送到 GitHub：</li> </ul> </li> </ol> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  git push origin master
+</code></pre></div></div> <ul> <li>如果你在 GitHub 上的分支不是 main，请将 main 替换为相应的分支名称。</li> </ul> <h2 id="3git仓库自动更新">3.GIT仓库自动更新</h2> <ol> <li> <p>自动更新仓库的代码，在仓库目录上一级</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># autopush.sh</span>
+<span class="c"># 设置项目目录</span>
+<span class="nb">cd </span>yywei0323.github.io
+</code></pre></div> </div> </li> </ol> <h1 id="获取最新的更改">获取最新的更改</h1> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git pull origin master
+</code></pre></div></div> <h1 id="添加所有更改">添加所有更改</h1> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add .
+</code></pre></div></div> <h1 id="提交更改">提交更改</h1> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git commit -m "Auto-update on $(date +'%Y-%m-%d %H:%M:%S')"
+</code></pre></div></div> <h1 id="推送更改到远程仓库">推送更改到远程仓库</h1> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git push origin master
 
--  var templatesPath = path.resolve(__dirname, 'templates');
-+  var extraTemplates;
-
--  function HoganJsUtils() {
-+  function HoganJsUtils(configuration) {
-+    this.config = configuration || {};
-+    extraTemplates = this.config.templates || {};
-   }
-
--  HoganJsUtils.prototype.render = function(namespace, view, params, configuration) {
--    var template = this.template(namespace, view, configuration);
-+  HoganJsUtils.prototype.render = function(namespace, view, params) {
-+    var template = this.template(namespace, view);
-     if (template) {
-       return template.render(params);
-     }
-@@ -27,17 +28,16 @@
-     return null;
-   };
-
--  HoganJsUtils.prototype.template = function(namespace, view, configuration) {
--    var config = configuration || {};
-+  HoganJsUtils.prototype.template = function(namespace, view) {
-     var templateKey = this._templateKey(namespace, view);
-
--    return this._getTemplate(templateKey, config);
-+    return this._getTemplate(templateKey);
-   };
-
--  HoganJsUtils.prototype._getTemplate = function(templateKey, config) {
-+  HoganJsUtils.prototype._getTemplate = function(templateKey) {
-     var template;
-
--    if (!config.noCache) {
-+    if (!this.config.noCache) {
-       template = this._readFromCache(templateKey);
-     }
-
-@@ -53,6 +53,7 @@
-
-     try {
-       if (fs.readFileSync) {
-+        var templatesPath = path.resolve(__dirname, 'templates');
-         var templatePath = path.join(templatesPath, templateKey);
-         var templateContent = fs.readFileSync(templatePath + '.mustache', 'utf8');
-         template = hogan.compile(templateContent);
-@@ -66,12 +67,16 @@
-   };
-
-   HoganJsUtils.prototype._readFromCache = function(templateKey) {
--    return hoganTemplates[templateKey];
-+    return extraTemplates[templateKey] || hoganTemplates[templateKey];
-   };
-
-   HoganJsUtils.prototype._templateKey = function(namespace, view) {
-     return namespace + '-' + view;
-   };
-
--  module.exports.HoganJsUtils = new HoganJsUtils();
-+  HoganJsUtils.prototype.compile = function(templateStr) {
-+    return hogan.compile(templateStr);
-+  };
-+
-+  module.exports.HoganJsUtils = HoganJsUtils;
- })();
-diff --git a/src/html-printer.js b/src/html-printer.js
-index 585d5b66..13f83047 100644
---- a/src/html-printer.js
-+++ b/src/html-printer.js
-@@ -8,6 +8,7 @@
- (function() {
-   var LineByLinePrinter = require('./line-by-line-printer.js').LineByLinePrinter;
-   var SideBySidePrinter = require('./side-by-side-printer.js').SideBySidePrinter;
-+  var FileListPrinter = require('./file-list-printer.js').FileListPrinter;
-
-   function HtmlPrinter() {
-   }
-@@ -22,5 +23,10 @@
-     return sideBySidePrinter.generateSideBySideJsonHtml(diffFiles);
-   };
-
-+  HtmlPrinter.prototype.generateFileListSummary = function(diffJson, config) {
-+    var fileListPrinter = new FileListPrinter(config);
-+    return fileListPrinter.generateFileList(diffJson);
-+  };
-+
-   module.exports.HtmlPrinter = new HtmlPrinter();
- })();
-diff --git a/src/line-by-line-printer.js b/src/line-by-line-printer.js
-index b07eb53c..d230bedd 100644
---- a/src/line-by-line-printer.js
-+++ b/src/line-by-line-printer.js
-@@ -11,7 +11,8 @@
-   var utils = require('./utils.js').Utils;
-   var Rematch = require('./rematch.js').Rematch;
-
--  var hoganUtils = require('./hoganjs-utils.js').HoganJsUtils;
-+  var hoganUtils;
-+
-   var genericTemplatesPath = 'generic';
-   var baseTemplatesPath = 'line-by-line';
-   var iconsBaseTemplatesPath = 'icon';
-@@ -19,6 +20,9 @@
-
-   function LineByLinePrinter(config) {
-     this.config = config;
-+
-+    var HoganJsUtils = require('./hoganjs-utils.js').HoganJsUtils;
-+    hoganUtils = new HoganJsUtils(config);
-   }
-
-   LineByLinePrinter.prototype.makeFileDiffHtml = function(file, diffs) {
-diff --git a/src/side-by-side-printer.js b/src/side-by-side-printer.js
-index bbf1dc8d..5e3033b3 100644
---- a/src/side-by-side-printer.js
-+++ b/src/side-by-side-printer.js
-@@ -11,7 +11,8 @@
-   var utils = require('./utils.js').Utils;
-   var Rematch = require('./rematch.js').Rematch;
-
--  var hoganUtils = require('./hoganjs-utils.js').HoganJsUtils;
-+  var hoganUtils;
-+
-   var genericTemplatesPath = 'generic';
-   var baseTemplatesPath = 'side-by-side';
-   var iconsBaseTemplatesPath = 'icon';
-@@ -26,6 +27,9 @@
-
-   function SideBySidePrinter(config) {
-     this.config = config;
-+
-+    var HoganJsUtils = require('./hoganjs-utils.js').HoganJsUtils;
-+    hoganUtils = new HoganJsUtils(config);
-   }
-
-   SideBySidePrinter.prototype.makeDiffHtml = function(file, diffs) {
-diff --git a/test/file-list-printer-tests.js b/test/file-list-printer-tests.js
-index a502a46f..60ea3208 100644
---- a/test/file-list-printer-tests.js
-+++ b/test/file-list-printer-tests.js
-@@ -1,6 +1,6 @@
- var assert = require('assert');
-
--var fileListPrinter = require('../src/file-list-printer.js').FileListPrinter;
-+var fileListPrinter = new (require('../src/file-list-printer.js').FileListPrinter)();
-
- describe('FileListPrinter', function() {
-   describe('generateFileList', function() {
-diff --git a/test/hogan-cache-tests.js b/test/hogan-cache-tests.js
-index 190bf6f8..3bb754ac 100644
---- a/test/hogan-cache-tests.js
-+++ b/test/hogan-cache-tests.js
-@@ -1,6 +1,6 @@
- var assert = require('assert');
-
--var HoganJsUtils = require('../src/hoganjs-utils.js').HoganJsUtils;
-+var HoganJsUtils = new (require('../src/hoganjs-utils.js').HoganJsUtils)();
- var diffParser = require('../src/diff-parser.js').DiffParser;
-
- describe('HoganJsUtils', function() {
-@@ -21,16 +21,28 @@ describe('HoganJsUtils', function() {
-       });
-       assert.equal(emptyDiffHtml, result);
-     });
-+
-     it('should render view without cache', function() {
-       var result = HoganJsUtils.render('generic', 'empty-diff', {
-         contentClass: 'd2h-code-line',
-         diffParser: diffParser
-       }, {noCache: true});
--      assert.equal(emptyDiffHtml + '\n', result);
-+      assert.equal(emptyDiffHtml, result);
-     });
-+
-     it('should return null if template is missing', function() {
--      var result = HoganJsUtils.render('generic', 'missing-template', {}, {noCache: true});
-+      var hoganUtils = new (require('../src/hoganjs-utils.js').HoganJsUtils)({noCache: true});
-+      var result = hoganUtils.render('generic', 'missing-template', {});
-       assert.equal(null, result);
-     });
-+
-+    it('should allow templates to be overridden', function() {
-+      var emptyDiffTemplate = HoganJsUtils.compile('&lt;p&gt;&lt;/p&gt;');
-+
-+      var config = {templates: {'generic-empty-diff': emptyDiffTemplate}};
-+      var hoganUtils = new (require('../src/hoganjs-utils.js').HoganJsUtils)(config);
-+      var result = hoganUtils.render('generic', 'empty-diff', {myName: 'Rodrigo Fernandes'});
-+      assert.equal('&lt;p&gt;Rodrigo Fernandes&lt;/p&gt;', result);
-+    });
-   });
- });
-diff --git a/test/line-by-line-tests.js b/test/line-by-line-tests.js
-index 1cd92073..8869b3df 100644
---- a/test/line-by-line-tests.js
-+++ b/test/line-by-line-tests.js
-@@ -14,7 +14,7 @@ describe('LineByLinePrinter', function() {
-         '            File without changes\n' +
-         '        &lt;/div&gt;\n' +
-         '    &lt;/td&gt;\n' +
--        '&lt;/tr&gt;\n';
-+        '&lt;/tr&gt;';
-
-       assert.equal(expected, fileHtml);
-     });
-@@ -422,7 +422,6 @@ describe('LineByLinePrinter', function() {
-         '        &lt;/div&gt;\n' +
-         '    &lt;/td&gt;\n' +
-         '&lt;/tr&gt;\n' +
--        '\n' +
-         '                &lt;/tbody&gt;\n' +
-         '            &lt;/table&gt;\n' +
-         '        &lt;/div&gt;\n' +
-diff --git a/test/side-by-side-printer-tests.js b/test/side-by-side-printer-tests.js
-index 76625f8e..771daaa5 100644
---- a/test/side-by-side-printer-tests.js
-+++ b/test/side-by-side-printer-tests.js
-@@ -14,7 +14,7 @@ describe('SideBySidePrinter', function() {
-         '            File without changes\n' +
-         '        &lt;/div&gt;\n' +
-         '    &lt;/td&gt;\n' +
--        '&lt;/tr&gt;\n';
-+        '&lt;/tr&gt;';
-
-       assert.equal(expectedRight, fileHtml.right);
-       assert.equal(expectedLeft, fileHtml.left);
-@@ -324,7 +324,6 @@ describe('SideBySidePrinter', function() {
-         '        &lt;/div&gt;\n' +
-         '    &lt;/td&gt;\n' +
-         '&lt;/tr&gt;\n' +
--        '\n' +
-         '                    &lt;/tbody&gt;\n' +
-         '                &lt;/table&gt;\n' +
-         '            &lt;/div&gt;\n' +
-
-From f3cadb96677d0eb82fc2752dc3ffbf35ca9b5bdb Mon Sep 17 00:00:00 2001
-From: Rodrigo Fernandes &lt;rtfrodrigo@gmail.com&gt;
-Date: Sat, 15 Oct 2016 13:21:22 +0100
-Subject: [PATCH 2/2] Allow uncompiled templates
-
----
- README.md                 |  3 +++
- src/hoganjs-utils.js      |  7 +++++++
- test/hogan-cache-tests.js | 24 +++++++++++++++++++++++-
- 3 files changed, 33 insertions(+), 1 deletion(-)
-
-diff --git a/README.md b/README.md
-index 132c8a28..46909f25 100644
---- a/README.md
-+++ b/README.md
-@@ -98,6 +98,9 @@ The HTML output accepts a Javascript object with configuration. Possible options
-   - `synchronisedScroll`: scroll both panes in side-by-side mode: `true` or `false`, default is `false`
-   - `matchWordsThreshold`: similarity threshold for word matching, default is 0.25
-   - `matchingMaxComparisons`: perform at most this much comparisons for line matching a block of changes, default is `2500`
-+  - `templates`: object with previously compiled templates to replace parts of the html
-+  - `rawTemplates`: object with raw not compiled templates to replace parts of the html
-+  &gt; For more information regarding the possible templates look into [src/templates](https://github.com/rtfpessoa/diff2html/tree/master/src/templates)
-
- ## Diff2HtmlUI Helper
-
-diff --git a/src/hoganjs-utils.js b/src/hoganjs-utils.js
-index 0dda08d7..b2e9c275 100644
---- a/src/hoganjs-utils.js
-+++ b/src/hoganjs-utils.js
-@@ -17,6 +17,13 @@
-   function HoganJsUtils(configuration) {
-     this.config = configuration || {};
-     extraTemplates = this.config.templates || {};
-+
-+    var rawTemplates = this.config.rawTemplates || {};
-+    for (var templateName in rawTemplates) {
-+      if (rawTemplates.hasOwnProperty(templateName)) {
-+        if (!extraTemplates[templateName]) extraTemplates[templateName] = this.compile(rawTemplates[templateName]);
-+      }
-+    }
-   }
-
-   HoganJsUtils.prototype.render = function(namespace, view, params) {
-diff --git a/test/hogan-cache-tests.js b/test/hogan-cache-tests.js
-index 3bb754ac..a34839c0 100644
---- a/test/hogan-cache-tests.js
-+++ b/test/hogan-cache-tests.js
-@@ -36,7 +36,7 @@ describe('HoganJsUtils', function() {
-       assert.equal(null, result);
-     });
-
--    it('should allow templates to be overridden', function() {
-+    it('should allow templates to be overridden with compiled templates', function() {
-       var emptyDiffTemplate = HoganJsUtils.compile('&lt;p&gt;&lt;/p&gt;');
-
-       var config = {templates: {'generic-empty-diff': emptyDiffTemplate}};
-@@ -44,5 +44,27 @@ describe('HoganJsUtils', function() {
-       var result = hoganUtils.render('generic', 'empty-diff', {myName: 'Rodrigo Fernandes'});
-       assert.equal('&lt;p&gt;Rodrigo Fernandes&lt;/p&gt;', result);
-     });
-+
-+    it('should allow templates to be overridden with uncompiled templates', function() {
-+      var emptyDiffTemplate = '&lt;p&gt;&lt;/p&gt;';
-+
-+      var config = {rawTemplates: {'generic-empty-diff': emptyDiffTemplate}};
-+      var hoganUtils = new (require('../src/hoganjs-utils.js').HoganJsUtils)(config);
-+      var result = hoganUtils.render('generic', 'empty-diff', {myName: 'Rodrigo Fernandes'});
-+      assert.equal('&lt;p&gt;Rodrigo Fernandes&lt;/p&gt;', result);
-+    });
-+
-+    it('should allow templates to be overridden giving priority to compiled templates', function() {
-+      var emptyDiffTemplate = HoganJsUtils.compile('&lt;p&gt;&lt;/p&gt;');
-+      var emptyDiffTemplateUncompiled = '&lt;p&gt;Not used!&lt;/p&gt;';
-+
-+      var config = {
-+        templates: {'generic-empty-diff': emptyDiffTemplate},
-+        rawTemplates: {'generic-empty-diff': emptyDiffTemplateUncompiled}
-+      };
-+      var hoganUtils = new (require('../src/hoganjs-utils.js').HoganJsUtils)(config);
-+      var result = hoganUtils.render('generic', 'empty-diff', {myName: 'Rodrigo Fernandes'});
-+      assert.equal('&lt;p&gt;Rodrigo Fernandes&lt;/p&gt;', result);
-+    });
-   });
- });
-</code></pre>]]></content><author><name></name></author><category term="sample-posts"/><category term="formatting"/><category term="code"/><summary type="html"><![CDATA[this is how you can display code diffs]]></summary></entry><entry><title type="html">a post with advanced image components</title><link href="https://yywei0323.github.io/blog/2024/advanced-images/" rel="alternate" type="text/html" title="a post with advanced image components"/><published>2024-01-27T11:46:00+00:00</published><updated>2024-01-27T11:46:00+00:00</updated><id>https://yywei0323.github.io/blog/2024/advanced-images</id><content type="html" xml:base="https://yywei0323.github.io/blog/2024/advanced-images/"><![CDATA[<p>This is an example post with advanced image components.</p> <h2 id="image-slider">Image Slider</h2> <p>This is a simple image slider. It uses the <a href="https://swiperjs.com/">Swiper</a> library. Check the <a href="https://swiperjs.com/demos">examples page</a> for more information of what you can achieve with it.</p> <swiper-container keyboard="true" navigation="true" pagination="true" pagination-clickable="true" pagination-dynamic-bullets="true" rewind="true"> <swiper-slide> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/9-480.webp 480w,/assets/img/9-800.webp 800w,/assets/img/9-1400.webp 1400w," sizes="95vw" type="image/webp"/> <img src="/assets/img/9.jpg" class="img-fluid rounded z-depth-1" width="100%" height="auto" loading="eager" onerror="this.onerror=null; $('.responsive-img-srcset').remove();"/> </picture> </figure> </swiper-slide> <swiper-slide> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/7-480.webp 480w,/assets/img/7-800.webp 800w,/assets/img/7-1400.webp 1400w," sizes="95vw" type="image/webp"/> <img src="/assets/img/7.jpg" class="img-fluid rounded z-depth-1" width="100%" height="auto" loading="eager" onerror="this.onerror=null; $('.responsive-img-srcset').remove();"/> </picture> </figure> </swiper-slide> <swiper-slide> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/8-480.webp 480w,/assets/img/8-800.webp 800w,/assets/img/8-1400.webp 1400w," sizes="95vw" type="image/webp"/> <img src="/assets/img/8.jpg" class="img-fluid rounded z-depth-1" width="100%" height="auto" loading="eager" onerror="this.onerror=null; $('.responsive-img-srcset').remove();"/> </picture> </figure> </swiper-slide> <swiper-slide> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/10-480.webp 480w,/assets/img/10-800.webp 800w,/assets/img/10-1400.webp 1400w," sizes="95vw" type="image/webp"/> <img src="/assets/img/10.jpg" class="img-fluid rounded z-depth-1" width="100%" height="auto" loading="eager" onerror="this.onerror=null; $('.responsive-img-srcset').remove();"/> </picture> </figure> </swiper-slide> <swiper-slide> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/12-480.webp 480w,/assets/img/12-800.webp 800w,/assets/img/12-1400.webp 1400w," sizes="95vw" type="image/webp"/> <img src="/assets/img/12.jpg" class="img-fluid rounded z-depth-1" width="100%" height="auto" loading="eager" onerror="this.onerror=null; $('.responsive-img-srcset').remove();"/> </picture> </figure> </swiper-slide> </swiper-container> <h2 id="image-comparison-slider">Image Comparison Slider</h2> <p>This is a simple image comparison slider. It uses the <a href="https://img-comparison-slider.sneas.io/">img-comparison-slider</a> library. Check the <a href="https://img-comparison-slider.sneas.io/examples.html">examples page</a> for more information of what you can achieve with it.</p> <img-comparison-slider> <figure slot="first"> <picture> <source class="responsive-img-srcset" srcset="/assets/img/prof_pic-480.webp 480w,/assets/img/prof_pic-800.webp 800w,/assets/img/prof_pic-1400.webp 1400w," sizes="95vw" type="image/webp"/> <img src="/assets/img/prof_pic.jpg" class="img-fluid rounded z-depth-1" width="100%" height="auto" loading="lazy" onerror="this.onerror=null; $('.responsive-img-srcset').remove();"/> </picture> </figure> <figure slot="second"> <picture> <source class="responsive-img-srcset" srcset="/assets/img/prof_pic_color-480.webp 480w,/assets/img/prof_pic_color-800.webp 800w,/assets/img/prof_pic_color-1400.webp 1400w," sizes="95vw" type="image/webp"/> <img src="/assets/img/prof_pic_color.png" class="img-fluid rounded z-depth-1" width="100%" height="auto" loading="lazy" onerror="this.onerror=null; $('.responsive-img-srcset').remove();"/> </picture> </figure> </img-comparison-slider>]]></content><author><name></name></author><category term="sample-posts"/><category term="formatting"/><category term="images"/><summary type="html"><![CDATA[this is what advanced image components could look like]]></summary></entry><entry><title type="html">a post with vega lite</title><link href="https://yywei0323.github.io/blog/2024/vega-lite/" rel="alternate" type="text/html" title="a post with vega lite"/><published>2024-01-27T00:20:00+00:00</published><updated>2024-01-27T00:20:00+00:00</updated><id>https://yywei0323.github.io/blog/2024/vega-lite</id><content type="html" xml:base="https://yywei0323.github.io/blog/2024/vega-lite/"><![CDATA[<p>This is an example post with some <a href="https://vega.github.io/vega-lite/">vega lite</a> code.</p> <div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">```</span><span class="nl">vega_lite
-</span><span class="sb">{
-  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "description": "A dot plot showing each movie in the database, and the difference from the average movie rating. The display is sorted by year to visualize everything in sequential order. The graph is for all Movies before 2019.",
-  "data": {
-    "url": "https://raw.githubusercontent.com/vega/vega/main/docs/data/movies.json"
-  },
-  "transform": [
-    {"filter": "datum['IMDB Rating'] != null"},
-    {"filter": {"timeUnit": "year", "field": "Release Date", "range": [null, 2019]}},
-    {
-      "joinaggregate": [{
-        "op": "mean",
-        "field": "IMDB Rating",
-        "as": "AverageRating"
-      }]
-    },
-    {
-      "calculate": "datum['IMDB Rating'] - datum.AverageRating",
-      "as": "RatingDelta"
-    }
-  ],
-  "mark": "point",
-  "encoding": {
-    "x": {
-      "field": "Release Date",
-      "type": "temporal"
-    },
-    "y": {
-      "field": "RatingDelta",
-      "type": "quantitative",
-      "title": "Rating Delta"
-    },
-    "color": {
-      "field": "RatingDelta",
-      "type": "quantitative",
-      "scale": {"domainMid": 0},
-      "title": "Rating Delta"
-    }
-  }
-}</span>
-<span class="p">```</span>
-</code></pre></div></div> <p>Which generates:</p> <pre><code class="language-vega_lite">{
-  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "description": "A dot plot showing each movie in the database, and the difference from the average movie rating. The display is sorted by year to visualize everything in sequential order. The graph is for all Movies before 2019.",
-  "data": {
-    "url": "https://raw.githubusercontent.com/vega/vega/main/docs/data/movies.json"
-  },
-  "transform": [
-    {"filter": "datum['IMDB Rating'] != null"},
-    {"filter": {"timeUnit": "year", "field": "Release Date", "range": [null, 2019]}},
-    {
-      "joinaggregate": [{
-        "op": "mean",
-        "field": "IMDB Rating",
-        "as": "AverageRating"
-      }]
-    },
-    {
-      "calculate": "datum['IMDB Rating'] - datum.AverageRating",
-      "as": "RatingDelta"
-    }
-  ],
-  "mark": "point",
-  "encoding": {
-    "x": {
-      "field": "Release Date",
-      "type": "temporal"
-    },
-    "y": {
-      "field": "RatingDelta",
-      "type": "quantitative",
-      "title": "Rating Delta"
-    },
-    "color": {
-      "field": "RatingDelta",
-      "type": "quantitative",
-      "scale": {"domainMid": 0},
-      "title": "Rating Delta"
-    }
-  }
-}
-</code></pre> <p>This plot supports both light and dark themes.</p>]]></content><author><name></name></author><category term="sample-posts"/><category term="formatting"/><category term="charts"/><summary type="html"><![CDATA[this is what included vega lite code could look like]]></summary></entry><entry><title type="html">a post with geojson</title><link href="https://yywei0323.github.io/blog/2024/geojson-map/" rel="alternate" type="text/html" title="a post with geojson"/><published>2024-01-26T17:57:00+00:00</published><updated>2024-01-26T17:57:00+00:00</updated><id>https://yywei0323.github.io/blog/2024/geojson-map</id><content type="html" xml:base="https://yywei0323.github.io/blog/2024/geojson-map/"><![CDATA[<p>This is an example post with some <a href="https://geojson.org/">geojson</a> code. The support is provided thanks to <a href="https://leafletjs.com/">Leaflet</a>. To create your own visualization, go to <a href="https://geojson.io/">geojson.io</a>.</p> <div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">```</span><span class="nl">geojson
-</span><span class="sb">{
-  "type": "FeatureCollection",
-  "features": [
-    {
-      "type": "Feature",
-      "properties": {},
-      "geometry": {
-        "coordinates": [
-          [
-            [
-              -60.11363029935569,
-              -2.904625022183211
-            ],
-            [
-              -60.11363029935569,
-              -3.162613728707967
-            ],
-            [
-              -59.820894493858034,
-              -3.162613728707967
-            ],
-            [
-              -59.820894493858034,
-              -2.904625022183211
-            ],
-            [
-              -60.11363029935569,
-              -2.904625022183211
-            ]
-          ]
-        ],
-        "type": "Polygon"
-      }
-    }
-  ]
-}</span>
-<span class="p">```</span>
-</code></pre></div></div> <p>Which generates:</p> <pre><code class="language-geojson">{
-  "type": "FeatureCollection",
-  "features": [
-    {
-      "type": "Feature",
-      "properties": {},
-      "geometry": {
-        "coordinates": [
-          [
-            [
-              -60.11363029935569,
-              -2.904625022183211
-            ],
-            [
-              -60.11363029935569,
-              -3.162613728707967
-            ],
-            [
-              -59.820894493858034,
-              -3.162613728707967
-            ],
-            [
-              -59.820894493858034,
-              -2.904625022183211
-            ],
-            [
-              -60.11363029935569,
-              -2.904625022183211
-            ]
-          ]
-        ],
-        "type": "Polygon"
-      }
-    }
-  ]
-}
-</code></pre>]]></content><author><name></name></author><category term="sample-posts"/><category term="formatting"/><category term="charts"/><category term="maps"/><summary type="html"><![CDATA[this is what included geojson code could look like]]></summary></entry><entry><title type="html">a post with echarts</title><link href="https://yywei0323.github.io/blog/2024/echarts/" rel="alternate" type="text/html" title="a post with echarts"/><published>2024-01-26T16:03:00+00:00</published><updated>2024-01-26T16:03:00+00:00</updated><id>https://yywei0323.github.io/blog/2024/echarts</id><content type="html" xml:base="https://yywei0323.github.io/blog/2024/echarts/"><![CDATA[<p>This is an example post with some <a href="https://echarts.apache.org/">echarts</a> code.</p> <div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">```</span><span class="nl">echarts
-</span><span class="sb">{
-  "title": {
-    "text": "ECharts Getting Started Example"
-  },
-  "responsive": true,
-  "tooltip": {},
-  "legend": {
-    "top": "30px",
-    "data": ["sales"]
-  },
-  "xAxis": {
-    "data": ["Shirts", "Cardigans", "Chiffons", "Pants", "Heels", "Socks"]
-  },
-  "yAxis": {},
-  "series": [
-    {
-      "name": "sales",
-      "type": "bar",
-      "data": [5, 20, 36, 10, 10, 20]
-    }
-  ]
-}</span>
-<span class="p">```</span>
-</code></pre></div></div> <p>Which generates:</p> <pre><code class="language-echarts">{
-  "title": {
-    "text": "ECharts Getting Started Example"
-  },
-  "responsive": true,
-  "tooltip": {},
-  "legend": {
-    "top": "30px",
-    "data": ["sales"]
-  },
-  "xAxis": {
-    "data": ["Shirts", "Cardigans", "Chiffons", "Pants", "Heels", "Socks"]
-  },
-  "yAxis": {},
-  "series": [
-    {
-      "name": "sales",
-      "type": "bar",
-      "data": [5, 20, 36, 10, 10, 20]
-    }
-  ]
-}
-</code></pre> <p>Note that this library offer support for both light and dark themes. You can switch between them using the theme switcher in the top right corner of the page.</p>]]></content><author><name></name></author><category term="sample-posts"/><category term="formatting"/><category term="charts"/><summary type="html"><![CDATA[this is what included echarts code could look like]]></summary></entry><entry><title type="html">a post with chart.js</title><link href="https://yywei0323.github.io/blog/2024/chartjs/" rel="alternate" type="text/html" title="a post with chart.js"/><published>2024-01-26T01:04:00+00:00</published><updated>2024-01-26T01:04:00+00:00</updated><id>https://yywei0323.github.io/blog/2024/chartjs</id><content type="html" xml:base="https://yywei0323.github.io/blog/2024/chartjs/"><![CDATA[<p>This is an example post with some <a href="https://www.chartjs.org/">chart.js</a> code.</p> <div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">```</span><span class="nl">chartjs
-</span><span class="sb">{
-  "type": "line",
-  "data": {
-    "labels": [
-      "January",
-      "February",
-      "March",
-      "April",
-      "May",
-      "June",
-      "July"
-    ],
-    "datasets": [
-      {
-        "label": "# of bugs",
-        "fill": false,
-        "lineTension": 0.1,
-        "backgroundColor": "rgba(75,192,192,0.4)",
-        "borderColor": "rgba(75,192,192,1)",
-        "borderCapStyle": "butt",
-        "borderDash": [],
-        "borderDashOffset": 0,
-        "borderJoinStyle": "miter",
-        "pointBorderColor": "rgba(75,192,192,1)",
-        "pointBackgroundColor": "#fff",
-        "pointBorderWidth": 1,
-        "pointHoverRadius": 5,
-        "pointHoverBackgroundColor": "rgba(75,192,192,1)",
-        "pointHoverBorderColor": "rgba(220,220,220,1)",
-        "pointHoverBorderWidth": 2,
-        "pointRadius": 1,
-        "pointHitRadius": 10,
-        "data": [
-          65,
-          59,
-          80,
-          81,
-          56,
-          55,
-          40
-        ],
-        "spanGaps": false
-      }
-    ]
-  },
-  "options": {}
-}</span>
-<span class="p">```</span>
-</code></pre></div></div> <p>This is how it looks like:</p> <pre><code class="language-chartjs">{
-  "type": "line",
-  "data": {
-    "labels": [
-      "January",
-      "February",
-      "March",
-      "April",
-      "May",
-      "June",
-      "July"
-    ],
-    "datasets": [
-      {
-        "label": "# of bugs",
-        "fill": false,
-        "lineTension": 0.1,
-        "backgroundColor": "rgba(75,192,192,0.4)",
-        "borderColor": "rgba(75,192,192,1)",
-        "borderCapStyle": "butt",
-        "borderDash": [],
-        "borderDashOffset": 0,
-        "borderJoinStyle": "miter",
-        "pointBorderColor": "rgba(75,192,192,1)",
-        "pointBackgroundColor": "#fff",
-        "pointBorderWidth": 1,
-        "pointHoverRadius": 5,
-        "pointHoverBackgroundColor": "rgba(75,192,192,1)",
-        "pointHoverBorderColor": "rgba(220,220,220,1)",
-        "pointHoverBorderWidth": 2,
-        "pointRadius": 1,
-        "pointHitRadius": 10,
-        "data": [
-          65,
-          59,
-          80,
-          81,
-          56,
-          55,
-          40
-        ],
-        "spanGaps": false
-      }
-    ]
-  },
-  "options": {}
-}
-</code></pre> <p>Also another example chart.</p> <div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">```</span><span class="nl">chartjs
-</span><span class="sb">{
-  "type": "doughnut",
-  "data": {
-    "labels": [
-      "Red",
-      "Blue",
-      "Yellow"
-    ],
-    "datasets": [
-      {
-        "data": [
-          300,
-          50,
-          100
-        ],
-        "backgroundColor": [
-          "#FF6384",
-          "#36A2EB",
-          "#FFCE56"
-        ],
-        "hoverBackgroundColor": [
-          "#FF6384",
-          "#36A2EB",
-          "#FFCE56"
-        ]
-      }
-    ]
-  },
-  "options": {}
-}</span>
-<span class="p">```</span>
-</code></pre></div></div> <p>Which generates:</p> <pre><code class="language-chartjs">{
-  "type": "doughnut",
-  "data": {
-    "labels": [
-      "Red",
-      "Blue",
-      "Yellow"
-    ],
-    "datasets": [
-      {
-        "data": [
-          300,
-          50,
-          100
-        ],
-        "backgroundColor": [
-          "#FF6384",
-          "#36A2EB",
-          "#FFCE56"
-        ],
-        "hoverBackgroundColor": [
-          "#FF6384",
-          "#36A2EB",
-          "#FFCE56"
-        ]
-      }
-    ]
-  },
-  "options": {}
-}
-</code></pre>]]></content><author><name></name></author><category term="sample-posts"/><category term="formatting"/><category term="charts"/><summary type="html"><![CDATA[this is what included chart.js code could look like]]></summary></entry><entry><title type="html">Build Pages</title><link href="https://yywei0323.github.io/blog/2023/build-pages/" rel="alternate" type="text/html" title="Build Pages"/><published>2023-09-01T20:40:16+00:00</published><updated>2023-09-01T20:40:16+00:00</updated><id>https://yywei0323.github.io/blog/2023/build%20pages</id><content type="html" xml:base="https://yywei0323.github.io/blog/2023/build-pages/"><![CDATA[<blockquote> <p>参考文献：</p> <p><a href="https://jekyllrb.com/">Jekyll • Simple, blog-aware, static sites | Transform your plain text into static websites and blogs (jekyllrb.com)</a></p> <p><a href="https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/creating-a-github-pages-site-with-jekyll">Creating a GitHub Pages site with Jekyll - GitHub Docs</a></p> <p>使用模版：<a href="https://github.com/alshedivat/al-folio">al-folio</a> 模版使用说明也在内；</p> </blockquote> <h2 id="why-jekyll--github-pages">Why Jekyll + Github pages:</h2> <ul> <li>环境部署便捷：静态网站代码只需要上传至github代码库即可；</li> <li>模版比较多，可便捷移植；</li> </ul> <h2 id="step-1安装配置jekyll">Step 1：安装配置Jekyll</h2> <ol> <li>安装Ruby</li> </ol> <ul> <li>在官网中下载https://rubyinstaller.org/，建议下载DevKit版本；</li> <li>运行安装程序：直接解压；按照程序提示运行</li> <li> <p>输入命令验证Ruby验证安装成功</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  ruby <span class="nt">-v</span>
+</code></pre></div></div> <ol> <li>新建logfile.log文件并更改autopush.sh的权限</li> </ol> <ul> <li>因为该代码属于两个用户 因此权限改为chmod 777</li> </ul> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">chmod </span>777 autopush.sh
+<span class="nb">chmod </span>777 logfile.log
+</code></pre></div></div> <ol> <li>增加自动执行的任务 <ul> <li>使用<code class="language-plaintext highlighter-rouge">cron</code>来定时执行该脚本。首先，编辑<code class="language-plaintext highlighter-rouge">crontab</code>文件：</li> </ul> </li> </ol> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>crontab <span class="nt">-e</span>
+</code></pre></div></div> <ul> <li>添加如下条目来每天定时执行该脚本，例如每天凌晨 2 点执行 <div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- cron表达式 --&gt;</span>
+&lt;!-- # <span class="ge">* *</span> <span class="ge">* *</span> <span class="err">*</span> command_to_execute
+<span class="c">&lt;!--  - - - - - --&gt;</span>
+<span class="c">&lt;!--  | | | | | --&gt;</span>
+<span class="c">&lt;!--  | | | | ----- 星期几 (0 - 7) (0 或 7 表示周日) --&gt;</span>
+<span class="c">&lt;!--  | | | ------- 月份 (1 - 12) --&gt;</span>
+<span class="c">&lt;!--  | | --------- 日期 (1 - 31) --&gt;</span>
+<span class="c">&lt;!--  | ----------- 小时 (0 - 23) --&gt;</span>
+<span class="c">&lt;!--  ------------- 分钟 (0 - 59) --&gt;</span> --&gt;
+</code></pre></div> </div> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0 2 <span class="k">*</span> <span class="k">*</span> <span class="k">*</span> bash /xx/blog/autopush.sh <span class="o">&gt;&gt;</span> /xx/blog/logfile.log 2&gt;&amp;1
+</code></pre></div> </div> <ul> <li>0 2 * * * 表示每天凌晨 2:00 执行任务。</li> <li>bash /opt/sharedVolumes/yangyuwei/blog/autopush.sh » /opt/sharedVolumes/yangyuwei/blog/logfile.log 2&gt;&amp;1 将日志输出重定向到文件。需要确保该命令在用户下可以使用。</li> </ul> </li> </ul> <ol> <li>权限问题 <ul> <li>由于该代码库是由jupyter notebook中yangyuwei用户编写 由root用户上传的；因此这里需要两个用户建立用户组，两个用户共享权限；</li> <li>新建用户组-&gt;将用户增加到用户组内-&gt;修改权限</li> </ul> </li> </ol> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">##新建用户组</span>
+<span class="nb">sudo </span>groupadd bloggroup
+<span class="c">##增加用户数目</span>
+<span class="nb">sudo </span>usermod <span class="nt">-aG</span> bloggroup root
+<span class="nb">sudo </span>usermod <span class="nt">-aG</span> bloggroup yangyuwei
+<span class="c">##修改权限</span>
+<span class="nb">sudo chown</span> <span class="nt">-R</span> yangyuwei:bloggroup /xx/blog
+</code></pre></div></div>]]></content><author><name></name></author><category term="Environment-Building"/><category term="Tools"/><summary type="html"><![CDATA[How to use git to manage code?]]></summary></entry><entry><title type="html">Build Pages</title><link href="https://yywei0323.github.io/blog/2023/build-pages/" rel="alternate" type="text/html" title="Build Pages"/><published>2023-09-01T20:40:16+00:00</published><updated>2023-09-01T20:40:16+00:00</updated><id>https://yywei0323.github.io/blog/2023/build%20pages</id><content type="html" xml:base="https://yywei0323.github.io/blog/2023/build-pages/"><![CDATA[<blockquote> <p>参考文献：</p> <p><a href="https://jekyllrb.com/">Jekyll • Simple, blog-aware, static sites | Transform your plain text into static websites and blogs (jekyllrb.com)</a></p> <p><a href="https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/creating-a-github-pages-site-with-jekyll">Creating a GitHub Pages site with Jekyll - GitHub Docs</a></p> <p>使用模版：<a href="https://github.com/alshedivat/al-folio">al-folio</a> 模版使用说明也在内；</p> </blockquote> <h2 id="why-jekyll--github-pages">Why Jekyll + Github pages:</h2> <ul> <li>环境部署便捷：静态网站代码只需要上传至github代码库即可；</li> <li>模版比较多，可便捷移植；</li> </ul> <h2 id="step-1安装配置jekyll">Step 1：安装配置Jekyll</h2> <ol> <li>安装Ruby</li> </ol> <ul> <li>在官网中下载https://rubyinstaller.org/，建议下载DevKit版本；</li> <li>运行安装程序：直接解压；按照程序提示运行</li> <li> <p>输入命令验证Ruby验证安装成功</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  ruby <span class="nt">-v</span>
 </code></pre></div> </div> </li> </ul> <p>如果看到 Ruby 的版本号，说明安装成功。</p> <ol> <li>安装 Bundler 和 Jekyll</li> </ol> <ul> <li>安装Bundler 和 Jekyll：</li> <li> <p>在命令提示符或 PowerShell 中输入以下命令：</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  gem <span class="nb">install </span>bundler jekyll
 </code></pre></div> </div> </li> <li> <p>安装完成后，验证 Jekyll 是否安装成功：</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  jekyll <span class="nt">-v</span>
 </code></pre></div> </div> </li> </ul> <p>如果看到 Jekyll 的版本号，说明安装成功。</p> <ul> <li>运行网站 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  bundle <span class="nb">exec </span>jekyll serve <span class="nt">--host</span> 0.0.0.0
@@ -944,7 +407,7 @@ index 3bb754ac..a34839c0 100644
 <span class="p">        -</span> [x] Put on left sock
 <span class="p">        -</span> [ ] Put on right sock
 <span class="p">      -</span> [x] Go to school
-</code></pre></div> </div> </li> <li> <p>tabs</p> <ul id="data-struct" class="tab" data-tab="059e8028-8447-4969-b3c2-e71c62e4573a" data-name="data-struct"> <li class="active" id="data-struct-yaml"> <a href="#">yaml </a> </li> <li id="data-struct-json"> <a href="#">json </a> </li> </ul> </li> </ul> <p>&lt;/ul&gt;</p> <ul class="tab-content" id="059e8028-8447-4969-b3c2-e71c62e4573a" data-name="data-struct"> <li class="active"> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>```yaml
+</code></pre></div> </div> </li> <li> <p>tabs</p> <ul id="data-struct" class="tab" data-tab="e89b52df-51ea-444d-9a74-7889380dc520" data-name="data-struct"> <li class="active" id="data-struct-yaml"> <a href="#">yaml </a> </li> <li id="data-struct-json"> <a href="#">json </a> </li> </ul> </li> </ul> <p>&lt;/ul&gt;</p> <ul class="tab-content" id="e89b52df-51ea-444d-9a74-7889380dc520" data-name="data-struct"> <li class="active"> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>```yaml
 hello:
   - "whatsup"
   - "hi"
@@ -965,77 +428,29 @@ hello:
       \draw[green,fill=black!60!green] (0,0) circle [x radius=1.5cm, y radius=10mm];
       \draw[blue,fill=black!60!blue] (0,0) circle [x radius=1cm, y radius=5mm, rotate=30];
   \end{tikzpicture}
-  </script> </li> </ul>]]></content><author><name></name></author><category term="Environment-Building"/><category term="Environment-Building"/><summary type="html"><![CDATA[Build pages by Jekyll + Githubpages]]></summary></entry><entry><title type="html">a post with bibliography</title><link href="https://yywei0323.github.io/blog/2023/post-bibliography/" rel="alternate" type="text/html" title="a post with bibliography"/><published>2023-07-12T13:56:00+00:00</published><updated>2023-07-12T13:56:00+00:00</updated><id>https://yywei0323.github.io/blog/2023/post-bibliography</id><content type="html" xml:base="https://yywei0323.github.io/blog/2023/post-bibliography/"><![CDATA[<p>This post shows how to add bibliography to simple blog posts. We support every citation style that <a href="https://github.com/inukshuk/jekyll-scholar">jekyll-scholar</a> does. That means simple citation like (missing reference), multiple citations like (missing reference), long references like (missing reference) or also quotes:</p> <blockquote><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,<br/>sed do eiusmod tempor.</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p><cite>(missing reference)</cite></blockquote> <p>If you would like something more academic, check the <a href="/blog/2021/distill/">distill style post</a>.</p>]]></content><author><name></name></author><category term="sample-posts"/><category term="formatting"/><category term="bib"/><summary type="html"><![CDATA[an example of a blog post with bibliography]]></summary></entry><entry><title type="html">a post with custom blockquotes</title><link href="https://yywei0323.github.io/blog/2023/custom-blockquotes/" rel="alternate" type="text/html" title="a post with custom blockquotes"/><published>2023-05-12T19:53:00+00:00</published><updated>2023-05-12T19:53:00+00:00</updated><id>https://yywei0323.github.io/blog/2023/custom-blockquotes</id><content type="html" xml:base="https://yywei0323.github.io/blog/2023/custom-blockquotes/"><![CDATA[<p>This post shows how to add custom styles for blockquotes. Based on <a href="https://github.com/sighingnow/jekyll-gitbook">jekyll-gitbook</a> implementation.</p> <p>We decided to support the same custom blockquotes as in <a href="https://sighingnow.github.io/jekyll-gitbook/jekyll/2022-06-30-tips_warnings_dangers.html">jekyll-gitbook</a>, which are also found in a lot of other sites’ styles. The styles definitions can be found on the <a href="https://github.com/alshedivat/al-folio/blob/master/_sass/_base.scss">_base.scss</a> file, more specifically:</p> <div class="language-scss highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/* Tips, warnings, and dangers */</span>
-<span class="nc">.post</span> <span class="nc">.post-content</span> <span class="nt">blockquote</span> <span class="p">{</span>
-  <span class="k">&amp;</span><span class="nc">.block-tip</span> <span class="p">{</span>
-    <span class="nl">border-color</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="o">--</span><span class="n">global-tip-block</span><span class="p">);</span>
-    <span class="nl">background-color</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="o">--</span><span class="n">global-tip-block-bg</span><span class="p">);</span>
-
-    <span class="nt">p</span> <span class="p">{</span>
-      <span class="nl">color</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="o">--</span><span class="n">global-tip-block-text</span><span class="p">);</span>
-    <span class="p">}</span>
-
-    <span class="nt">h1</span><span class="o">,</span>
-    <span class="nt">h2</span><span class="o">,</span>
-    <span class="nt">h3</span><span class="o">,</span>
-    <span class="nt">h4</span><span class="o">,</span>
-    <span class="nt">h5</span><span class="o">,</span>
-    <span class="nt">h6</span> <span class="p">{</span>
-      <span class="nl">color</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="o">--</span><span class="n">global-tip-block-title</span><span class="p">);</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
-
-  <span class="k">&amp;</span><span class="nc">.block-warning</span> <span class="p">{</span>
-    <span class="nl">border-color</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="o">--</span><span class="n">global-warning-block</span><span class="p">);</span>
-    <span class="nl">background-color</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="o">--</span><span class="n">global-warning-block-bg</span><span class="p">);</span>
-
-    <span class="nt">p</span> <span class="p">{</span>
-      <span class="nl">color</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="o">--</span><span class="n">global-warning-block-text</span><span class="p">);</span>
-    <span class="p">}</span>
-
-    <span class="nt">h1</span><span class="o">,</span>
-    <span class="nt">h2</span><span class="o">,</span>
-    <span class="nt">h3</span><span class="o">,</span>
-    <span class="nt">h4</span><span class="o">,</span>
-    <span class="nt">h5</span><span class="o">,</span>
-    <span class="nt">h6</span> <span class="p">{</span>
-      <span class="nl">color</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="o">--</span><span class="n">global-warning-block-title</span><span class="p">);</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
-
-  <span class="k">&amp;</span><span class="nc">.block-danger</span> <span class="p">{</span>
-    <span class="nl">border-color</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="o">--</span><span class="n">global-danger-block</span><span class="p">);</span>
-    <span class="nl">background-color</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="o">--</span><span class="n">global-danger-block-bg</span><span class="p">);</span>
-
-    <span class="nt">p</span> <span class="p">{</span>
-      <span class="nl">color</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="o">--</span><span class="n">global-danger-block-text</span><span class="p">);</span>
-    <span class="p">}</span>
-
-    <span class="nt">h1</span><span class="o">,</span>
-    <span class="nt">h2</span><span class="o">,</span>
-    <span class="nt">h3</span><span class="o">,</span>
-    <span class="nt">h4</span><span class="o">,</span>
-    <span class="nt">h5</span><span class="o">,</span>
-    <span class="nt">h6</span> <span class="p">{</span>
-      <span class="nl">color</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="o">--</span><span class="n">global-danger-block-title</span><span class="p">);</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div></div> <p>A regular blockquote can be used as following:</p> <div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gt">&gt; This is a regular blockquote</span>
-<span class="gt">&gt; and it can be used as usual</span>
-</code></pre></div></div> <blockquote> <p>This is a regular blockquote and it can be used as usual</p> </blockquote> <p>These custom styles can be used by adding the specific class to the blockquote, as follows:</p> <div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gt">&gt; ##### TIP</span>
-<span class="gt">&gt;</span>
-<span class="gt">&gt; A tip can be used when you want to give advice</span>
-<span class="gt">&gt; related to a certain content.</span>
-{: .block-tip }
-</code></pre></div></div> <blockquote class="block-tip"> <h5 id="tip">TIP</h5> <p>A tip can be used when you want to give advice related to a certain content.</p> </blockquote> <div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gt">&gt; ##### WARNING</span>
-<span class="gt">&gt;</span>
-<span class="gt">&gt; This is a warning, and thus should</span>
-<span class="gt">&gt; be used when you want to warn the user</span>
-{: .block-warning }
-</code></pre></div></div> <blockquote class="block-warning"> <h5 id="warning">WARNING</h5> <p>This is a warning, and thus should be used when you want to warn the user</p> </blockquote> <div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gt">&gt; ##### DANGER</span>
-<span class="gt">&gt;</span>
-<span class="gt">&gt; This is a danger zone, and thus should</span>
-<span class="gt">&gt; be used carefully</span>
-{: .block-danger }
-</code></pre></div></div> <blockquote class="block-danger"> <h5 id="danger">DANGER</h5> <p>This is a danger zone, and thus should be used carefully</p> </blockquote> ]]></content><author><name></name></author><category term="sample-posts"/><category term="formatting"/><category term="blockquotes"/><summary type="html"><![CDATA[an example of a blog post with custom blockquotes]]></summary></entry></feed>
+  </script> </li> </ul>]]></content><author><name></name></author><category term="Environment-Building"/><category term="Environment-Building"/><summary type="html"><![CDATA[Build pages by Jekyll + Github pages]]></summary></entry><entry><title type="html">a distill-style blog post</title><link href="https://yywei0323.github.io/blog/2021/distill/" rel="alternate" type="text/html" title="a distill-style blog post"/><published>2021-05-22T00:00:00+00:00</published><updated>2021-05-22T00:00:00+00:00</updated><id>https://yywei0323.github.io/blog/2021/distill</id><content type="html" xml:base="https://yywei0323.github.io/blog/2021/distill/"><![CDATA[<h2 id="equations">Equations</h2> <p>This theme supports rendering beautiful math in inline and display modes using <a href="https://www.mathjax.org/">MathJax 3</a> engine. You just need to surround your math expression with <code class="language-plaintext highlighter-rouge">$$</code>, like <code class="language-plaintext highlighter-rouge">$$ E = mc^2 $$</code>. If you leave it inside a paragraph, it will produce an inline expression, just like \(E = mc^2\).</p> <p>To use display mode, again surround your expression with <code class="language-plaintext highlighter-rouge">$$</code> and place it as a separate paragraph. Here is an example:</p> \[\left( \sum_{k=1}^n a_k b_k \right)^2 \leq \left( \sum_{k=1}^n a_k^2 \right) \left( \sum_{k=1}^n b_k^2 \right)\] <p>Note that MathJax 3 is <a href="https://docs.mathjax.org/en/latest/upgrading/whats-new-3.0.html">a major re-write of MathJax</a> that brought a significant improvement to the loading and rendering speed, which is now <a href="http://www.intmath.com/cg5/katex-mathjax-comparison.php">on par with KaTeX</a>.</p> <hr/> <h2 id="citations">Citations</h2> <p>Citations are then used in the article body with the <code class="language-plaintext highlighter-rouge">&lt;d-cite&gt;</code> tag. The key attribute is a reference to the id provided in the bibliography. The key attribute can take multiple ids, separated by commas.</p> <p>The citation is presented inline like this: <d-cite key="gregor2015draw"></d-cite> (a number that displays more information on hover). If you have an appendix, a bibliography is automatically created and populated in it.</p> <p>Distill chose a numerical inline citation style to improve readability of citation dense articles and because many of the benefits of longer citations are obviated by displaying more information on hover. However, we consider it good style to mention author last names if you discuss something at length and it fits into the flow well — the authors are human and it’s nice for them to have the community associate them with their work.</p> <hr/> <h2 id="footnotes">Footnotes</h2> <p>Just wrap the text you would like to show up in a footnote in a <code class="language-plaintext highlighter-rouge">&lt;d-footnote&gt;</code> tag. The number of the footnote will be automatically generated.<d-footnote>This will become a hoverable footnote.</d-footnote></p> <hr/> <h2 id="code-blocks">Code Blocks</h2> <p>Syntax highlighting is provided within <code class="language-plaintext highlighter-rouge">&lt;d-code&gt;</code> tags. An example of inline code snippets: <code class="language-plaintext highlighter-rouge">&lt;d-code language="html"&gt;let x = 10;&lt;/d-code&gt;</code>. For larger blocks of code, add a <code class="language-plaintext highlighter-rouge">block</code> attribute:</p> <d-code block="" language="javascript"> var x = 25; function(x) { return x * x; } </d-code> <p><strong>Note:</strong> <code class="language-plaintext highlighter-rouge">&lt;d-code&gt;</code> blocks do not look good in the dark mode. You can always use the default code-highlight using the <code class="language-plaintext highlighter-rouge">highlight</code> liquid tag:</p> <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">25</span><span class="p">;</span>
+<span class="kd">function</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="p">{</span>
+<span class="k">return</span> <span class="nx">x</span> <span class="err">\</span><span class="o">*</span> <span class="nx">x</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure> <hr/> <h2 id="interactive-plots">Interactive Plots</h2> <p>You can add interative plots using plotly + iframes :framed_picture:</p> <div class="l-page"> <iframe src="/assets/plotly/demo.html" frameborder="0" scrolling="no" height="500px" width="100%" style="border: 1px dashed grey;"></iframe> </div> <p>The plot must be generated separately and saved into an HTML file. To generate the plot that you see above, you can use the following code snippet:</p> <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="n">pd</span>
+<span class="kn">import</span> <span class="nn">plotly.express</span> <span class="k">as</span> <span class="n">px</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">read_csv</span><span class="p">(</span>
+<span class="s">'https://raw.githubusercontent.com/plotly/datasets/master/earthquakes-23k.csv'</span>
+<span class="p">)</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="p">.</span><span class="n">density_mapbox</span><span class="p">(</span>
+<span class="n">df</span><span class="p">,</span>
+<span class="n">lat</span><span class="o">=</span><span class="s">'Latitude'</span><span class="p">,</span>
+<span class="n">lon</span><span class="o">=</span><span class="s">'Longitude'</span><span class="p">,</span>
+<span class="n">z</span><span class="o">=</span><span class="s">'Magnitude'</span><span class="p">,</span>
+<span class="n">radius</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+<span class="n">center</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">lat</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">lon</span><span class="o">=</span><span class="mi">180</span><span class="p">),</span>
+<span class="n">zoom</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+<span class="n">mapbox_style</span><span class="o">=</span><span class="s">"stamen-terrain"</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">fig</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+<span class="n">fig</span><span class="p">.</span><span class="n">write_html</span><span class="p">(</span><span class="s">'assets/plotly/demo.html'</span><span class="p">)</span></code></pre></figure> <hr/> <h2 id="details-boxes">Details boxes</h2> <p>Details boxes are collapsible boxes which hide additional information from the user. They can be added with the <code class="language-plaintext highlighter-rouge">details</code> liquid tag:</p> <details><summary>Click here to know more</summary> <p>Additional details, where math \(2x - 1\) and <code class="language-plaintext highlighter-rouge">code</code> is rendered correctly.</p> </details> <hr/> <h2 id="layouts">Layouts</h2> <p>The main text column is referred to as the body. It is the assumed layout of any direct descendants of the <code class="language-plaintext highlighter-rouge">d-article</code> element.</p> <div class="fake-img l-body"> <p>.l-body</p> </div> <p>For images you want to display a little larger, try <code class="language-plaintext highlighter-rouge">.l-page</code>:</p> <div class="fake-img l-page"> <p>.l-page</p> </div> <p>All of these have an outset variant if you want to poke out from the body text a little bit. For instance:</p> <div class="fake-img l-body-outset"> <p>.l-body-outset</p> </div> <div class="fake-img l-page-outset"> <p>.l-page-outset</p> </div> <p>Occasionally you’ll want to use the full browser width. For this, use <code class="language-plaintext highlighter-rouge">.l-screen</code>. You can also inset the element a little from the edge of the browser by using the inset variant.</p> <div class="fake-img l-screen"> <p>.l-screen</p> </div> <div class="fake-img l-screen-inset"> <p>.l-screen-inset</p> </div> <p>The final layout is for marginalia, asides, and footnotes. It does not interrupt the normal flow of <code class="language-plaintext highlighter-rouge">.l-body</code> sized text except on mobile screen sizes.</p> <div class="fake-img l-gutter"> <p>.l-gutter</p> </div> <hr/> <h2 id="other-typography">Other Typography?</h2> <p>Emphasis, aka italics, with <em>asterisks</em> (<code class="language-plaintext highlighter-rouge">*asterisks*</code>) or <em>underscores</em> (<code class="language-plaintext highlighter-rouge">_underscores_</code>).</p> <p>Strong emphasis, aka bold, with <strong>asterisks</strong> or <strong>underscores</strong>.</p> <p>Combined emphasis with <strong>asterisks and <em>underscores</em></strong>.</p> <p>Strikethrough uses two tildes. <del>Scratch this.</del></p> <ol> <li>First ordered list item</li> <li>Another item ⋅⋅* Unordered sub-list.</li> <li>Actual numbers don’t matter, just that it’s a number ⋅⋅1. Ordered sub-list</li> <li>And another item.</li> </ol> <p>⋅⋅⋅You can have properly indented paragraphs within list items. Notice the blank line above, and the leading spaces (at least one, but we’ll use three here to also align the raw Markdown).</p> <p>⋅⋅⋅To have a line break without a paragraph, you will need to use two trailing spaces.⋅⋅ ⋅⋅⋅Note that this line is separate, but within the same paragraph.⋅⋅ ⋅⋅⋅(This is contrary to the typical GFM line break behaviour, where trailing spaces are not required.)</p> <ul> <li> <p>Unordered list can use asterisks</p> </li> <li> <p>Or minuses</p> </li> <li> <p>Or pluses</p> </li> </ul> <p><a href="https://www.google.com">I’m an inline-style link</a></p> <p><a href="https://www.google.com" title="Google's Homepage">I’m an inline-style link with title</a></p> <p><a href="https://www.mozilla.org">I’m a reference-style link</a></p> <p><a href="http://slashdot.org">You can use numbers for reference-style link definitions</a></p> <p>Or leave it empty and use the <a href="http://www.reddit.com">link text itself</a>.</p> <p>URLs and URLs in angle brackets will automatically get turned into links. http://www.example.com or <a href="http://www.example.com">http://www.example.com</a> and sometimes example.com (but not on Github, for example).</p> <p>Some text to show that the reference links can follow later.</p> <p>Here’s our logo (hover to see the title text):</p> <p>Inline-style: <img src="https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png" alt="alt text" title="Logo Title Text 1"/></p> <p>Reference-style: <img src="https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png" alt="alt text" title="Logo Title Text 2"/></p> <p>Inline <code class="language-plaintext highlighter-rouge">code</code> has <code class="language-plaintext highlighter-rouge">back-ticks around</code> it.</p> <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">s</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">JavaScript syntax highlighting</span><span class="dl">"</span><span class="p">;</span>
+<span class="nx">alert</span><span class="p">(</span><span class="nx">s</span><span class="p">);</span>
+</code></pre></div></div> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">s</span> <span class="o">=</span> <span class="s">"Python syntax highlighting"</span>
+<span class="k">print</span> <span class="n">s</span>
+</code></pre></div></div> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>No language indicated, so no syntax highlighting.
+But let's throw in a &lt;b&gt;tag&lt;/b&gt;.
+</code></pre></div></div> <p>Colons can be used to align columns.</p> <table> <thead> <tr> <th>Tables</th> <th style="text-align: center">Are</th> <th style="text-align: right">Cool</th> </tr> </thead> <tbody> <tr> <td>col 3 is</td> <td style="text-align: center">right-aligned</td> <td style="text-align: right">$1600</td> </tr> <tr> <td>col 2 is</td> <td style="text-align: center">centered</td> <td style="text-align: right">$12</td> </tr> <tr> <td>zebra stripes</td> <td style="text-align: center">are neat</td> <td style="text-align: right">$1</td> </tr> </tbody> </table> <p>There must be at least 3 dashes separating each header cell. The outer pipes (|) are optional, and you don’t need to make the raw Markdown line up prettily. You can also use inline Markdown.</p> <table> <thead> <tr> <th>Markdown</th> <th>Less</th> <th>Pretty</th> </tr> </thead> <tbody> <tr> <td><em>Still</em></td> <td><code class="language-plaintext highlighter-rouge">renders</code></td> <td><strong>nicely</strong></td> </tr> <tr> <td>1</td> <td>2</td> <td>3</td> </tr> </tbody> </table> <blockquote> <p>Blockquotes are very handy in email to emulate reply text. This line is part of the same quote.</p> </blockquote> <p>Quote break.</p> <blockquote> <p>This is a very long line that will still be quoted properly when it wraps. Oh boy let’s keep writing to make sure this is long enough to actually wrap for everyone. Oh, you can <em>put</em> <strong>Markdown</strong> into a blockquote.</p> </blockquote> <p>Here’s a line for us to start with.</p> <p>This line is separated from the one above by two newlines, so it will be a <em>separate paragraph</em>.</p> <p>This line is also a separate paragraph, but… This line is only separated by a single newline, so it’s a separate line in the <em>same paragraph</em>.</p>]]></content><author><name>Albert Einstein</name></author><category term="Examples"/><summary type="html"><![CDATA[an example of a distill-style blog post and main elements]]></summary></entry><entry><title type="html">a post with bibliography</title><link href="https://yywei0323.github.io/blog/2018/post-bibliography/" rel="alternate" type="text/html" title="a post with bibliography"/><published>2018-07-12T13:56:00+00:00</published><updated>2018-07-12T13:56:00+00:00</updated><id>https://yywei0323.github.io/blog/2018/post-bibliography</id><content type="html" xml:base="https://yywei0323.github.io/blog/2018/post-bibliography/"><![CDATA[<p>This post shows how to add bibliography to simple blog posts. We support every citation style that <a href="https://github.com/inukshuk/jekyll-scholar">jekyll-scholar</a> does. That means simple citation like (missing reference), multiple citations like (missing reference), long references like (missing reference) or also quotes:</p> <blockquote><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,<br/>sed do eiusmod tempor.</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p><cite>(missing reference)</cite></blockquote> <p>If you would like something more academic, check the <a href="/blog/2021/distill/">distill style post</a>.</p>]]></content><author><name></name></author><category term="sample-posts"/><category term="formatting"/><category term="bib"/><summary type="html"><![CDATA[an example of a blog post with bibliography]]></summary></entry></feed>
