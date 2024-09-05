@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Gits Useage
+title: Gits Guild
 date: 2022-09-01 20:40:16
-description: How to use Git to manage code?
+description: Build pages by Jekyll + Githubpages
 tags: Tools
 categories: Environment-Building
 giscus_comments: true
@@ -64,6 +64,58 @@ git commit -m "Update blog and content"
 3. 将本地更改推送到 GitHub：
 - 将本地更改推送到 GitHub：
 ```bash
-git push origin main
+git push origin master
 ```
 - 如果你在 GitHub 上的分支不是 main，请将 main 替换为相应的分支名称。
+
+## 3.GIT仓库自动更新
+
+1. 自动更新仓库的代码，在仓库目录上一级
+```bash
+# autopush.sh
+# 设置项目目录
+cd yywei0323.github.io
+
+# 获取最新的更改
+git pull origin master
+
+# 添加所有更改
+git add .
+
+# 提交更改
+git commit -m "Auto-update on $(date +'%Y-%m-%d %H:%M:%S')"
+
+# 推送更改到远程仓库
+git push origin master
+```
+
+2. 新建logfile.log文件并更改autopush.sh的权限
+
+- 因为该代码属于两个用户 因此权限改为chmod 777
+
+```bash
+chmod 777 autopush.sh
+chmod 777 logfile.log
+```
+
+3. 增加自动执行的任务 
+- 使用`cron`来定时执行该脚本。首先，编辑`crontab`文件：
+```bash
+crontab -e
+```
+- 添加如下条目来每天定时执行该脚本，例如每天凌晨 2 点执行
+```bash
+## cron表达式
+* * * * * command_to_execute
+- - - - -
+| | | | |
+| | | | ----- 星期几 (0 - 7) (0 或 7 表示周日)
+| | | ------- 月份 (1 - 12)
+| | --------- 日期 (1 - 31)
+| ----------- 小时 (0 - 23)
+------------- 分钟 (0 - 59)
+
+0 2 * * * /opt/sharedVolumes/yangyuwei/blog/autopush.sh >> /opt/sharedVolumes/yangyuwei/blog/logfile.log 2>&1
+```
+    - 0 2 * * * 表示每天凌晨 2:00 执行任务。
+    - /path/to/logfile.log 2>&1 将日志输出重定向到文件。
