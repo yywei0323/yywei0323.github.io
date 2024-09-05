@@ -1,19 +1,25 @@
-- title: General Information
+- title: Basics
   type: map
   contents:
-    - name: Full Name
+    - name: 姓名
       value: 杨雨薇
-    - name: Date of Birth
-      value: 14th March 1879
-    - name: Languages
-      value: English, Chinese
+    - name: 政治面貌
+      value: 共产党员
+    - name: 学历
+      value: 硕士研究生
+    - name: 电话
+      value: 180-9025-6025
+    - name: 邮箱
+      value: yangyuwei_npu@163.com
+    - name: 电话
+      value: 180-9025-6025
+    
 
 - title: Education
   type: time_table
   contents:
-    - title: PhD
+    - title: 硕士
       institution: 西北工业大学
-      year: 1905
       description:
         - Description 1.
         - Description 2.
@@ -21,12 +27,15 @@
           contents:
             - Sub-description 1.
             - Sub-description 2.
-    - title: Federal teaching diploma
-      institution: Eidgenössische Technische Hochschule, Zurich, Switzerland
-      year: 1900
+    - title: 本科
+      institution: 中国人民公安大学
       description:
         - Description 1.
         - Description 2.
+        - title: Description 3.
+          contents:
+            - Sub-description 1.
+            - Sub-description 2.
 
 - title: Experience
   type: time_table
