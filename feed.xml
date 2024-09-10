@@ -1,4 +1,105 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="https://yywei0323.github.io/feed.xml" rel="self" type="application/atom+xml"/><link href="https://yywei0323.github.io/" rel="alternate" type="text/html" hreflang="en"/><updated>2024-09-06T16:00:58+00:00</updated><id>https://yywei0323.github.io/feed.xml</id><title type="html">blank</title><subtitle>A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design. </subtitle><entry><title type="html">383赎金信、N数之和</title><link href="https://yywei0323.github.io/blog/2023/algorithm_383+454+015+018/" rel="alternate" type="text/html" title="383赎金信、N数之和"/><published>2023-09-11T20:40:16+00:00</published><updated>2023-09-11T20:40:16+00:00</updated><id>https://yywei0323.github.io/blog/2023/algorithm_383+454+015+018</id><content type="html" xml:base="https://yywei0323.github.io/blog/2023/algorithm_383+454+015+018/"><![CDATA[<blockquote> <p><a href="https://leetcode.cn/problems/swap-nodes-in-pairs/description/">383赎金信</a></p> <p><a href="https://programmercarl.com/0383.赎金信.html#思路">383赎金信代码随想录</a></p> <p><a href="https://leetcode.cn/problems/4sum-ii/">454四数之和2</a></p> <p><a href="https://programmercarl.com/0454.四数相加II.html#算法公开课">454四数之和2代码随想录</a></p> <p><a href="https://leetcode.cn/problems/3sum/description/">015三数之和</a></p> <p><a href="https://programmercarl.com/0015.三数之和.html#思路">015三数之和代码随想录</a></p> <p><a href="https://leetcode.cn/problems/4sum/description/">018四数之和</a></p> <p><a href="https://programmercarl.com/0018.四数之和.html#算法公开课">018四数之和代码随想录</a></p> </blockquote> <h1 id="383赎金信">383赎金信</h1> <h2 id="题目">题目</h2> <p>给你两个字符串：ransomNote 和 magazine ，判断 ransomNote 能不能由 magazine 里面的字符构成。</p> <p>如果可以，返回 true ；否则返回 false 。</p> <p>magazine 中的每个字符只能在 ransomNote 中使用一次。</p> <h2 id="题解">题解</h2> <p>和前面计数一样</p> <h1 id="四数之和2">四数之和2</h1> <h2 id="题目-1">题目</h2> <p>给你四个整数数组 nums1、nums2、nums3 和 nums4 ，数组长度都是 n ，请你计算有多少个元组 (i, j, k, l) 能满足：</p> <ul> <li>0 &lt;= i, j, k, l &lt; n</li> <li>nums1[i] + nums2[j] + nums3[k] + nums4[l] == 0</li> </ul> <h2 id="题解-1">题解</h2> <ul> <li>不要求题解中不出现重复数字</li> <li>从不同数组中挑数字 不需要考虑重复问题</li> <li>更简单</li> <li>1个哈希表 分别对2组数组计算即可</li> </ul> <h2 id="题解代码">题解代码</h2> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="https://yywei0323.github.io/feed.xml" rel="self" type="application/atom+xml"/><link href="https://yywei0323.github.io/" rel="alternate" type="text/html" hreflang="en"/><updated>2024-09-10T16:00:49+00:00</updated><id>https://yywei0323.github.io/feed.xml</id><title type="html">blank</title><subtitle>A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design. </subtitle><entry><title type="html">28字符串匹配；重复字符串；</title><link href="https://yywei0323.github.io/blog/2023/algorithm_%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%93%E9%A2%98-344+541+55-Copy1/" rel="alternate" type="text/html" title="28字符串匹配；重复字符串；"/><published>2023-09-13T20:40:16+00:00</published><updated>2023-09-13T20:40:16+00:00</updated><id>https://yywei0323.github.io/blog/2023/algorithm_%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%93%E9%A2%98-344+541+55-Copy1</id><content type="html" xml:base="https://yywei0323.github.io/blog/2023/algorithm_%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%93%E9%A2%98-344+541+55-Copy1/"><![CDATA[<blockquote> <p><a href="https://leetcode.cn/problems/find-the-index-of-the-first-occurrence-in-a-string/description/">28.strStr()</a></p> <p><a href="https://programmercarl.com/0028.实现strStr.html#思路">实现strStr()代码随想录</a></p> <p><a href="https://leetcode.cn/problems/repeated-substring-pattern/submissions/538631105/">459.重复字符串</a></p> <p><a href="https://programmercarl.com/0459.重复的子字符串.html#其他语言版本">重复字符串代码随想录</a></p> </blockquote> <h2 id="28字符串匹配">28.字符串匹配</h2> <h3 id="题目">题目</h3> <p>给你两个字符串 haystack 和 needle ，请你在 haystack 字符串中找出 needle 字符串的第一个匹配项的下标（下标从 0 开始）。如果 needle 不是 haystack 的一部分，则返回 -1 。</p> <h2 id="题解方法kmp">题解方法——KMP</h2> <ul> <li>next数组：最大相同前后缀数组 next[i]代表needle第i个字符的最大相同前后缀</li> <li>获取next数组： <ul> <li>判断当前字符串是否</li> </ul> </li> </ul> <h1 id="题解代码">题解代码</h1> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">getnext</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">s</span><span class="p">):</span>
+        <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">next_</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)):</span>
+            <span class="k">while</span> <span class="n">j</span><span class="o">&gt;</span><span class="mi">0</span> <span class="ow">and</span> <span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">!=</span><span class="n">s</span><span class="p">[</span><span class="n">j</span><span class="p">]:</span><span class="c1">##不一样 且不是初始值 则回退到上一个点
+</span>                <span class="n">j</span> <span class="o">=</span> <span class="n">next_</span><span class="p">[</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">==</span><span class="n">s</span><span class="p">[</span><span class="n">j</span><span class="p">]:</span>
+                <span class="n">j</span> <span class="o">+=</span><span class="mi">1</span>
+            <span class="n">next_</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">j</span>
+        <span class="k">return</span> <span class="n">next_</span>
+
+    <span class="k">def</span> <span class="nf">strStr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">haystack</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">needle</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">needle</span><span class="p">)</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mi">0</span>
+        <span class="n">next_</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">getnext</span><span class="p">(</span><span class="n">needle</span><span class="p">)</span>
+        <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">haystack</span><span class="p">)):</span>
+            <span class="k">while</span> <span class="n">j</span><span class="o">&gt;</span><span class="mi">0</span> <span class="ow">and</span> <span class="n">haystack</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">!=</span><span class="n">needle</span><span class="p">[</span><span class="n">j</span><span class="p">]:</span>
+                <span class="n">j</span> <span class="o">=</span> <span class="n">next_</span><span class="p">[</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">haystack</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">==</span><span class="n">needle</span><span class="p">[</span><span class="n">j</span><span class="p">]:</span>
+                <span class="n">j</span><span class="o">+=</span><span class="mi">1</span>
+            <span class="k">if</span> <span class="n">j</span><span class="o">==</span><span class="nb">len</span><span class="p">(</span><span class="n">needle</span><span class="p">):</span>
+                <span class="k">return</span> <span class="n">i</span><span class="o">-</span><span class="nb">len</span><span class="p">(</span><span class="n">needle</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span>
+        <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
+</code></pre></div></div> <h1 id="替换数字">替换数字</h1> <h2 id="题目-1">题目</h2> <p>给定一个字符串 s，它包含小写字母和数字字符，请编写一个函数，将字符串中的字母字符保持不变，而将每个数字字符替换为number。 例如，对于输入字符串 “a1b2c3”，函数应该将其转换为 “anumberbnumbercnumber”。</p> <h2 id="题解">题解</h2> <ul> <li>字符串不能直接在原位修改转为列表</li> <li>字符串本身可以比大小</li> </ul> <h2 id="题解代码-1">题解代码</h2> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)):</span>
+        <span class="k">if</span> <span class="s">"a"</span><span class="o">&lt;=</span><span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">&lt;=</span><span class="s">"z"</span><span class="p">:</span>
+            <span class="k">continue</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="s">"number"</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">""</span><span class="p">.</span><span class="n">join</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
+    
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">'__main__'</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</code></pre></div></div> <h1 id="55右旋转字符串">55.右旋转字符串</h1> <h2 id="题目-2">题目</h2> <p>字符串的右旋转操作是把字符串尾部的若干个字符转移到字符串的前面。给定一个字符串 s 和一个正整数 k，请编写一个函数，将字符串中的后面 k 个字符移到字符串的前面，实现字符串的右旋转操作。</p> <p>例如，对于输入字符串 “abcdefg” 和整数 2，函数应该将其转换为 “fgabcde”。</p> <h2 id="题解-1">题解：</h2> <ul> <li>思路1：直接重新拼接字符串 从<code class="language-plaintext highlighter-rouge">k%len</code>划分开拼接；</li> <li>思路2：反转两次=没有反转-&gt; 整体反向+前后分别反向</li> </ul> <h2 id="题解代码-2">题解代码</h2> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">num</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
+<span class="n">str_</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
+<span class="n">num</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">righerreverse</span><span class="p">(</span><span class="n">num</span><span class="p">,</span><span class="n">str_</span><span class="p">):</span>
+    <span class="n">str_</span> <span class="o">=</span> <span class="n">str_</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">res_str</span> <span class="o">=</span> <span class="n">str_</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">num</span><span class="p">][::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="n">str_</span><span class="p">[</span><span class="n">num</span><span class="p">:][::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">res_str</span>
+
+<span class="n">res_str</span> <span class="o">=</span> <span class="n">righerreverse</span><span class="p">(</span><span class="n">num</span><span class="p">,</span><span class="n">str_</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">res_str</span><span class="p">)</span>
+</code></pre></div></div> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)):</span>
+        <span class="k">if</span> <span class="s">"a"</span><span class="o">&lt;=</span><span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">&lt;=</span><span class="s">"z"</span><span class="p">:</span>
+            <span class="k">continue</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="s">"number"</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">""</span><span class="p">.</span><span class="n">join</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
+    
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">'__main__'</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</code></pre></div></div>]]></content><author><name></name></author><category term="Algorithm"/><summary type="html"><![CDATA[代码随想录算法训练营第九天]]></summary></entry><entry><title type="html">字符串：344反转字符串、541反转字符串2、替换数字、翻转字符串内单词、55右旋转字符串</title><link href="https://yywei0323.github.io/blog/2023/algorithm_%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%93%E9%A2%98-344+541+55/" rel="alternate" type="text/html" title="字符串：344反转字符串、541反转字符串2、替换数字、翻转字符串内单词、55右旋转字符串"/><published>2023-09-12T20:40:16+00:00</published><updated>2023-09-12T20:40:16+00:00</updated><id>https://yywei0323.github.io/blog/2023/algorithm_%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%93%E9%A2%98-344+541+55</id><content type="html" xml:base="https://yywei0323.github.io/blog/2023/algorithm_%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%93%E9%A2%98-344+541+55/"><![CDATA[<blockquote> <p><a href="https://leetcode.cn/problems/reverse-string/">反转字符串</a></p> <p><a href="https://programmercarl.com/0344.反转字符串.html#算法公开课">反转字符串代码随想录</a></p> <p><a href="https://kamacoder.com/problempage.php?pid=1064">替换数字</a></p> <p><a href="https://programmercarl.com/kama54.替换数字.html#其他语言版本">替换数字代码随想录</a></p> <p><a href="https://leetcode.cn/problems/reverse-words-in-a-string/description/">翻转单词</a></p> <p><a href="https://kamacoder.com/problempage.php?pid=1065">右旋字符串</a></p> </blockquote> <h1 id="344反转字符串">344反转字符串</h1> <h2 id="题目">题目</h2> <p>编写一个函数，其作用是将输入的字符串反转过来。输入字符串以字符数组 s 的形式给出。</p> <p>不要给另外的数组分配额外的空间，你必须原地修改输入数组、使用 O(1) 的额外空间解决这一问题。</p> <h2 id="题解">题解</h2> <ul> <li>现有方法： <ul> <li>双指针：左右互换；</li> <li>遍历：循环前一半</li> <li>函数：reversed函数</li> <li>递推</li> </ul> </li> </ul> <h1 id="题解代码">题解代码</h1> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">reverseString</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">s</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="s">"""
+        Do not return anything, modify s in-place instead.
+        """</span>
+        <span class="n">l</span><span class="p">,</span><span class="n">r</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span>
+        <span class="k">while</span> <span class="n">l</span><span class="o">&lt;</span><span class="n">r</span><span class="p">:</span>
+            <span class="n">s</span><span class="p">[</span><span class="n">l</span><span class="p">],</span><span class="n">s</span><span class="p">[</span><span class="n">r</span><span class="p">]</span> <span class="o">=</span> <span class="n">s</span><span class="p">[</span><span class="n">r</span><span class="p">],</span><span class="n">s</span><span class="p">[</span><span class="n">l</span><span class="p">]</span>
+            <span class="n">l</span><span class="o">+=</span><span class="mi">1</span>
+            <span class="n">r</span><span class="o">-=</span><span class="mi">1</span>
+</code></pre></div></div> <h1 id="替换数字">替换数字</h1> <h2 id="题目-1">题目</h2> <p>给定一个字符串 s，它包含小写字母和数字字符，请编写一个函数，将字符串中的字母字符保持不变，而将每个数字字符替换为number。 例如，对于输入字符串 “a1b2c3”，函数应该将其转换为 “anumberbnumbercnumber”。</p> <h2 id="题解-1">题解</h2> <ul> <li>字符串不能直接在原位修改转为列表</li> <li>字符串本身可以比大小</li> </ul> <h2 id="题解代码-1">题解代码</h2> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)):</span>
+        <span class="k">if</span> <span class="s">"a"</span><span class="o">&lt;=</span><span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">&lt;=</span><span class="s">"z"</span><span class="p">:</span>
+            <span class="k">continue</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="s">"number"</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">""</span><span class="p">.</span><span class="n">join</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
+    
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">'__main__'</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</code></pre></div></div> <h1 id="55右旋转字符串">55.右旋转字符串</h1> <h2 id="题目-2">题目</h2> <p>字符串的右旋转操作是把字符串尾部的若干个字符转移到字符串的前面。给定一个字符串 s 和一个正整数 k，请编写一个函数，将字符串中的后面 k 个字符移到字符串的前面，实现字符串的右旋转操作。</p> <p>例如，对于输入字符串 “abcdefg” 和整数 2，函数应该将其转换为 “fgabcde”。</p> <h2 id="题解-2">题解：</h2> <ul> <li>思路1：直接重新拼接字符串 从<code class="language-plaintext highlighter-rouge">k%len</code>划分开拼接；</li> <li>思路2：反转两次=没有反转-&gt; 整体反向+前后分别反向</li> </ul> <h2 id="题解代码-2">题解代码</h2> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">num</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
+<span class="n">str_</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
+<span class="n">num</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">righerreverse</span><span class="p">(</span><span class="n">num</span><span class="p">,</span><span class="n">str_</span><span class="p">):</span>
+    <span class="n">str_</span> <span class="o">=</span> <span class="n">str_</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">res_str</span> <span class="o">=</span> <span class="n">str_</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">num</span><span class="p">][::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="n">str_</span><span class="p">[</span><span class="n">num</span><span class="p">:][::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">res_str</span>
+
+<span class="n">res_str</span> <span class="o">=</span> <span class="n">righerreverse</span><span class="p">(</span><span class="n">num</span><span class="p">,</span><span class="n">str_</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">res_str</span><span class="p">)</span>
+</code></pre></div></div> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)):</span>
+        <span class="k">if</span> <span class="s">"a"</span><span class="o">&lt;=</span><span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">&lt;=</span><span class="s">"z"</span><span class="p">:</span>
+            <span class="k">continue</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="s">"number"</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">""</span><span class="p">.</span><span class="n">join</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
+    
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">'__main__'</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</code></pre></div></div>]]></content><author><name></name></author><category term="Algorithm"/><summary type="html"><![CDATA[代码随想录算法训练营第八天]]></summary></entry><entry><title type="html">383赎金信、N数之和</title><link href="https://yywei0323.github.io/blog/2023/algorithm_383+454+015+018/" rel="alternate" type="text/html" title="383赎金信、N数之和"/><published>2023-09-11T20:40:16+00:00</published><updated>2023-09-11T20:40:16+00:00</updated><id>https://yywei0323.github.io/blog/2023/algorithm_383+454+015+018</id><content type="html" xml:base="https://yywei0323.github.io/blog/2023/algorithm_383+454+015+018/"><![CDATA[<blockquote> <p><a href="https://leetcode.cn/problems/swap-nodes-in-pairs/description/">383赎金信</a></p> <p><a href="https://programmercarl.com/0383.赎金信.html#思路">383赎金信代码随想录</a></p> <p><a href="https://leetcode.cn/problems/4sum-ii/">454四数之和2</a></p> <p><a href="https://programmercarl.com/0454.四数相加II.html#算法公开课">454四数之和2代码随想录</a></p> <p><a href="https://leetcode.cn/problems/3sum/description/">015三数之和</a></p> <p><a href="https://programmercarl.com/0015.三数之和.html#思路">015三数之和代码随想录</a></p> <p><a href="https://leetcode.cn/problems/4sum/description/">018四数之和</a></p> <p><a href="https://programmercarl.com/0018.四数之和.html#算法公开课">018四数之和代码随想录</a></p> </blockquote> <h1 id="383赎金信">383赎金信</h1> <h2 id="题目">题目</h2> <p>给你两个字符串：ransomNote 和 magazine ，判断 ransomNote 能不能由 magazine 里面的字符构成。</p> <p>如果可以，返回 true ；否则返回 false 。</p> <p>magazine 中的每个字符只能在 ransomNote 中使用一次。</p> <h2 id="题解">题解</h2> <p>和前面计数一样</p> <h1 id="四数之和2">四数之和2</h1> <h2 id="题目-1">题目</h2> <p>给你四个整数数组 nums1、nums2、nums3 和 nums4 ，数组长度都是 n ，请你计算有多少个元组 (i, j, k, l) 能满足：</p> <ul> <li>0 &lt;= i, j, k, l &lt; n</li> <li>nums1[i] + nums2[j] + nums3[k] + nums4[l] == 0</li> </ul> <h2 id="题解-1">题解</h2> <ul> <li>不要求题解中不出现重复数字</li> <li>从不同数组中挑数字 不需要考虑重复问题</li> <li>更简单</li> <li>1个哈希表 分别对2组数组计算即可</li> </ul> <h2 id="题解代码">题解代码</h2> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
     <span class="k">def</span> <span class="nf">fourSumCount</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nums1</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="n">nums2</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="n">nums3</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="n">nums4</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
         <span class="n">hash_table</span> <span class="o">=</span><span class="p">{}</span>
         <span class="k">for</span> <span class="n">num_1</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">nums1</span><span class="p">)):</span>
@@ -292,155 +393,4 @@
 </span>        <span class="n">nums</span><span class="p">[</span><span class="n">slow</span><span class="p">]</span> <span class="o">=</span> <span class="n">nums</span><span class="p">[</span><span class="n">fast</span><span class="p">]</span>
         <span class="n">slow</span> <span class="o">=</span> <span class="n">slow</span><span class="o">+</span><span class="mi">1</span> <span class="c1">##slow慢就是因为要符合条件才移动
 </span>    <span class="n">fast</span> <span class="o">=</span> <span class="n">fast</span><span class="o">+</span><span class="mi">1</span> <span class="c1">##fast快是因为任何时间都会移动
-</span></code></pre></div></div>]]></content><author><name></name></author><category term="Algorithm"/><summary type="html"><![CDATA[代码随想录算法训练营第一天]]></summary></entry><entry><title type="html">Gits Useage</title><link href="https://yywei0323.github.io/blog/2023/gits/" rel="alternate" type="text/html" title="Gits Useage"/><published>2023-09-05T20:40:16+00:00</published><updated>2023-09-05T20:40:16+00:00</updated><id>https://yywei0323.github.io/blog/2023/gits</id><content type="html" xml:base="https://yywei0323.github.io/blog/2023/gits/"><![CDATA[<h2 id="1git-ssh密钥配置">1.GIT SSH密钥配置</h2> <ol> <li> <p>生成ssh密钥1</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh-keygen <span class="nt">-t</span> ed25519 <span class="nt">-C</span> <span class="s2">"2286988225@qq.com"</span>
-</code></pre></div> </div> </li> <li> <p>添加SSH密钥到SSH-Agent</p> <ul> <li> <p>启动SSH-Agent</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">eval</span> <span class="s2">"</span><span class="si">$(</span>ssh-agent <span class="nt">-s</span><span class="si">)</span><span class="s2">"</span>
-</code></pre></div> </div> </li> <li> <p>添加生成的SSH私钥到SSH-Agent</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh-add ~/.ssh/id_ed25519
-</code></pre></div> </div> </li> </ul> </li> <li> <p>将SSH公钥添加到Github</p> <ul> <li> <p>打印公钥</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cat</span> ~/.ssh/id_ed25519.pub
-</code></pre></div> </div> </li> <li> <p>复制公钥到<code class="language-plaintext highlighter-rouge">Settings &gt; SSH and GPG keys &gt; New SSH key</code></p> </li> </ul> </li> <li> <p>验证SSH配置</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh <span class="nt">-T</span> git@github.com
-</code></pre></div> </div> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   - 如果成功连接，你将看到类似于以下的输出：
-</code></pre></div> </div> </li> </ol> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  Hi username! You<span class="s1">'ve successfully authenticated, but GitHub does not provide shell access.
-</span></code></pre></div></div> <ol> <li> <p>启动SSH配置</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Start-Service ssh-agent
-</code></pre></div> </div> </li> </ol> <h2 id="2git仓库克隆并提交">2.GIT仓库克隆并提交</h2> <ol> <li> <p>克隆仓库</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone git@github.com:your_username/your_repository.git
-</code></pre></div> </div> </li> <li> <p>编辑并提交更改</p> <ul> <li>在本地对仓库进行修改。</li> <li>提交更改：</li> </ul> </li> </ol> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  git add <span class="nb">.</span>
-  git commit <span class="nt">-m</span> <span class="s2">"Update blog and content"</span>
-</code></pre></div></div> <ol> <li>将本地更改推送到 GitHub： <ul> <li>将本地更改推送到 GitHub：</li> </ul> </li> </ol> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  git push origin master
-</code></pre></div></div> <ul> <li>如果你在 GitHub 上的分支不是 main，请将 main 替换为相应的分支名称。</li> </ul> <h2 id="3git仓库自动更新">3.GIT仓库自动更新</h2> <ol> <li> <p>自动更新仓库的代码，在仓库目录上一级</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># autopush.sh</span>
-<span class="c"># 设置项目目录</span>
-<span class="nb">cd </span>yywei0323.github.io
-</code></pre></div> </div> </li> </ol> <h1 id="获取最新的更改">获取最新的更改</h1> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git pull origin master
-</code></pre></div></div> <h1 id="添加所有更改">添加所有更改</h1> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add .
-</code></pre></div></div> <h1 id="提交更改">提交更改</h1> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git commit -m "Auto-update on $(date +'%Y-%m-%d %H:%M:%S')"
-</code></pre></div></div> <h1 id="推送更改到远程仓库">推送更改到远程仓库</h1> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git push origin master
-
-</code></pre></div></div> <ol> <li>新建logfile.log文件并更改autopush.sh的权限</li> </ol> <ul> <li>因为该代码属于两个用户 因此权限改为chmod 777</li> </ul> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">chmod </span>777 autopush.sh
-<span class="nb">chmod </span>777 logfile.log
-</code></pre></div></div> <ol> <li>增加自动执行的任务 <ul> <li>使用<code class="language-plaintext highlighter-rouge">cron</code>来定时执行该脚本。首先，编辑<code class="language-plaintext highlighter-rouge">crontab</code>文件：</li> </ul> </li> </ol> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>crontab <span class="nt">-e</span>
-</code></pre></div></div> <ul> <li>添加如下条目来每天定时执行该脚本，例如每天凌晨 2 点执行 <div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- cron表达式 --&gt;</span>
-&lt;!-- # <span class="ge">* *</span> <span class="ge">* *</span> <span class="err">*</span> command_to_execute
-<span class="c">&lt;!--  - - - - - --&gt;</span>
-<span class="c">&lt;!--  | | | | | --&gt;</span>
-<span class="c">&lt;!--  | | | | ----- 星期几 (0 - 7) (0 或 7 表示周日) --&gt;</span>
-<span class="c">&lt;!--  | | | ------- 月份 (1 - 12) --&gt;</span>
-<span class="c">&lt;!--  | | --------- 日期 (1 - 31) --&gt;</span>
-<span class="c">&lt;!--  | ----------- 小时 (0 - 23) --&gt;</span>
-<span class="c">&lt;!--  ------------- 分钟 (0 - 59) --&gt;</span> --&gt;
-</code></pre></div> </div> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0 2 <span class="k">*</span> <span class="k">*</span> <span class="k">*</span> bash /xx/blog/autopush.sh <span class="o">&gt;&gt;</span> /xx/blog/logfile.log 2&gt;&amp;1
-</code></pre></div> </div> <ul> <li>0 2 * * * 表示每天凌晨 2:00 执行任务。</li> <li>bash /opt/sharedVolumes/yangyuwei/blog/autopush.sh » /opt/sharedVolumes/yangyuwei/blog/logfile.log 2&gt;&amp;1 将日志输出重定向到文件。需要确保该命令在用户下可以使用。</li> </ul> </li> </ul> <ol> <li>权限问题 <ul> <li>由于该代码库是由jupyter notebook中yangyuwei用户编写 由root用户上传的；因此这里需要两个用户建立用户组，两个用户共享权限；</li> <li>新建用户组-&gt;将用户增加到用户组内-&gt;修改权限</li> </ul> </li> </ol> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">##新建用户组</span>
-<span class="nb">sudo </span>groupadd bloggroup
-<span class="c">##增加用户数目</span>
-<span class="nb">sudo </span>usermod <span class="nt">-aG</span> bloggroup root
-<span class="nb">sudo </span>usermod <span class="nt">-aG</span> bloggroup yangyuwei
-<span class="c">##修改权限</span>
-<span class="nb">sudo chown</span> <span class="nt">-R</span> yangyuwei:bloggroup /xx/blog
-</code></pre></div></div>]]></content><author><name></name></author><category term="Environment-Building"/><category term="Tools"/><summary type="html"><![CDATA[How to use git to manage code?]]></summary></entry><entry><title type="html">Build Pages</title><link href="https://yywei0323.github.io/blog/2023/build-pages/" rel="alternate" type="text/html" title="Build Pages"/><published>2023-09-01T20:40:16+00:00</published><updated>2023-09-01T20:40:16+00:00</updated><id>https://yywei0323.github.io/blog/2023/build%20pages</id><content type="html" xml:base="https://yywei0323.github.io/blog/2023/build-pages/"><![CDATA[<blockquote> <p>参考文献：</p> <p><a href="https://jekyllrb.com/">Jekyll • Simple, blog-aware, static sites | Transform your plain text into static websites and blogs (jekyllrb.com)</a></p> <p><a href="https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/creating-a-github-pages-site-with-jekyll">Creating a GitHub Pages site with Jekyll - GitHub Docs</a></p> <p>使用模版：<a href="https://github.com/alshedivat/al-folio">al-folio</a> 模版使用说明也在内；</p> </blockquote> <h2 id="why-jekyll--github-pages">Why Jekyll + Github pages:</h2> <ul> <li>环境部署便捷：静态网站代码只需要上传至github代码库即可；</li> <li>模版比较多，可便捷移植；</li> </ul> <h2 id="step-1安装配置jekyll">Step 1：安装配置Jekyll</h2> <ol> <li>安装Ruby</li> </ol> <ul> <li>在官网中下载https://rubyinstaller.org/，建议下载DevKit版本；</li> <li>运行安装程序：直接解压；按照程序提示运行</li> <li> <p>输入命令验证Ruby验证安装成功</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  ruby <span class="nt">-v</span>
-</code></pre></div> </div> </li> </ul> <p>如果看到 Ruby 的版本号，说明安装成功。</p> <ol> <li>安装 Bundler 和 Jekyll</li> </ol> <ul> <li>安装Bundler 和 Jekyll：</li> <li> <p>在命令提示符或 PowerShell 中输入以下命令：</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  gem <span class="nb">install </span>bundler jekyll
-</code></pre></div> </div> </li> <li> <p>安装完成后，验证 Jekyll 是否安装成功：</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  jekyll <span class="nt">-v</span>
-</code></pre></div> </div> </li> </ul> <p>如果看到 Jekyll 的版本号，说明安装成功。</p> <ul> <li>运行网站 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  bundle <span class="nb">exec </span>jekyll serve <span class="nt">--host</span> 0.0.0.0
-</code></pre></div> </div> </li> </ul> <h2 id="step-2根据模版建立网站">Step 2：根据模版建立网站</h2> <ol> <li> <p>在github通过模版新建项目</p> </li> <li> <p>在github保存项目</p> </li> </ol> <ul> <li>修改权限：在<strong>setting\Actions\General</strong>中 修改权限 “<strong>Read and write permissions</strong>” （在项目内就可以修改项目）</li> <li> <p>修改文件：<strong>_config.yml</strong>中修改<strong>url</strong>和<strong>basepath</strong>,保存修改；</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  url: <span class="o">[</span>https://yywei0323.github.io]<span class="o">(</span>https://yywei0323.github.io/<span class="o">)</span>
-  <span class="c"># the base hostname &amp; protocol for your site</span>
-  baseurl: <span class="c"># the subpath of your site, e.g. /blog/. Leave blank for root</span>
-</code></pre></div> </div> </li> <li>设置github pages：在<strong>settings\Pages\Build and deployment修改Branch 为gh-pages</strong></li> <li>等待4分钟，在<strong>Actions\pages-build-deployment</strong>中打开对应的部署即可运行；</li> </ul> <h2 id="step-3-修改模版网站内内容">Step 3. 修改模版网站内内容</h2> <ol> <li>修改上边框 <ul> <li>删除某个字段（例如：teching）<strong>_pages/teching</strong>对应的md中的 <strong>“nav: true”</strong> 字段修改为 <strong>“nav:false”</strong></li> <li>修改字段名：pages内<strong>title</strong>字段</li> </ul> </li> <li>修改publications <ul> <li><strong>_bibliography\papers.bib</strong>增加bib数据 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> @inproceedings{yang2023nfc,                                      ##ref名字
- bibtex_show={true},                                            ##显示bib
- preview={nfc-ids.png},                                         ##配图
- title={NFC-IDS: An Intrusion Detection System Based on RF Signals for NFC Security}, ##名字
- html={https://ieeexplore.ieee.org/abstract/document/10182412}, ##增加链接
- author={Yang, Yuwei and Xun, Yijie and Yan, Yumeng and Liu, Jiajia and Jin, Ziteng}, ##authors
- booktitle={2023 International Wireless Communications and Mobile Computing (IWCMC)}, ##发布商
- pages={494--499},                                   
- year={2023},                                                   ##发表年份
- organization={IEEE}                                           ##发布机构
- }
-</code></pre></div> </div> </li> </ul> </li> <li>修改CV <ul> <li>修改原则：主要遵从<strong>assets/json/resume.json</strong>中设置；如果该文件失效会遵循 <strong>/_data/cv.yml</strong>；</li> <li>修改字段：在<strong>assets/json/resume.json</strong>中修改：例如 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> # assets/json/resume.json
- education": [
-   {
-     "institution": "西北工业大学 985 211",
-     "area": "网络空间安全学院 - 电子信息专业",
-     "studyType": "硕士",
-     "startDate": "2022-09",
-     "endDate": "2025-06", 
-     "score": "成绩：91.68/100", ##模板中原本没有的字段
-     "rank":  "排名：3/73"       ##模板中原本没有的字段
-   }
- ]
-</code></pre></div> </div> </li> </ul> <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="c">&lt;!--  _includes\resume\education.liquid --&gt;</span>
- <span class="c">&lt;!-- 原本有的字段 --&gt;</span>
-     <span class="nt">&lt;h6</span> <span class="na">class=</span><span class="s">"ml-1 ml-md-4"</span> <span class="na">style=</span><span class="s">"font-size: 0.95rem"</span><span class="nt">&gt;&lt;/h6&gt;</span> 
- <span class="c">&lt;!--     按照原本的字段的模式新增的字段 --&gt;</span>
-     <span class="nt">&lt;h6</span> <span class="na">class=</span><span class="s">"ml-1 ml-md-4"</span> <span class="na">style=</span><span class="s">"font-size: 0.95rem"</span><span class="nt">&gt;&lt;/h6&gt;</span>
-     <span class="nt">&lt;h6</span> <span class="na">class=</span><span class="s">"ml-1 ml-md-4"</span> <span class="na">style=</span><span class="s">"font-size: 0.95rem"</span><span class="nt">&gt;&lt;/h6&gt;</span>
-</code></pre></div> </div> </li> <li>新建blog</li> </ol> <ul> <li>新增类别：在 <strong>“_config.yml”</strong> 中修改展示 <strong>tags</strong> 和 <strong>categories</strong> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  display_tags: ["Environment-Building", "Examples","Security","Algorithm","AI","Java","Tools"] 
-  display_categories: ["Environment-Building","sample-posts"]
-</code></pre></div> </div> </li> <li>修改主页名字和description:在 <strong>“_config.yml”</strong> 中修改展示 <strong>blog_name</strong> 和 <strong>blog_description</strong> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  blog_name: My blog # blog_name will be displayed in your blog page
-  blog_description: Technological Diary
-</code></pre></div> </div> </li> <li> <p>增加blog：将md文件放在 <strong>_posts</strong> 目录下</p> </li> <li> <p>blog表头</p> <div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-  layout: distill 
-  title: a distill-style blog post                                           ##标题
-  description: an example of a distill-style blog post and main elements     ##描述
-  tags: Examples                                                             ##tags
-  giscus_comments: true                                                      ##设置评论（此处giscus没设置正确）
-  date: 2021-05-22                                                           ## 发布日期
-  featured: true
-
-  <span class="c">&lt;!-- 侧边目录 --&gt;</span>
-  toc:
-    sidebar: left
-
-</code></pre></div> </div> </li> <li>typograms <ul> <li>typograms code. <pre><code class="language-`markdown">  +----+
-  |    |---&gt; My first diagram!
-  +----+
-</code></pre> </li> </ul> </li> <li> <p>jupyter notebook</p> <ul> <li>代码：</li> </ul> </li> </ul> <div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{::nomarkdown}
-<span class="p">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="nv">jupyter_path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'assets/jupyter/blog.ipynb'</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">relative_url</span><span class="w"> </span><span class="p">%}</span>
-<span class="p">{%</span><span class="w"> </span><span class="nt">capture</span><span class="w"> </span><span class="nv">notebook_exists</span><span class="w"> </span><span class="p">%}{%</span><span class="w"> </span><span class="nt">file_exists</span><span class="w"> </span>assets/jupyter/blog.ipynb<span class="w"> </span><span class="p">%}{%</span><span class="w"> </span><span class="nt">endcapture</span><span class="w"> </span><span class="p">%}</span>
-<span class="p">{%</span><span class="w"> </span><span class="kr">if</span><span class="w"> </span><span class="nv">notebook_exists</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s1">'true'</span><span class="w"> </span><span class="p">%}</span>
-  <span class="p">{%</span><span class="w"> </span><span class="nt">jupyter_notebook</span><span class="w"> </span>jupyter_path<span class="w"> </span><span class="p">%}</span>
-<span class="p">{%</span><span class="w"> </span><span class="kr">else</span><span class="w"> </span><span class="p">%}</span>
-  &lt;p&gt;Sorry, the notebook you are looking for does not exist.&lt;/p&gt;
-<span class="p">{%</span><span class="w"> </span><span class="kr">endif</span><span class="w"> </span><span class="p">%}</span>
-{:/nomarkdown}
-</code></pre></div></div> <ul> <li>侧边目录 <div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="na">toc</span><span class="pi">:</span>
-    <span class="na">beginning</span><span class="pi">:</span> <span class="no">true</span>
-</code></pre></div> </div> <div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="na">toc</span><span class="pi">:</span>
-    <span class="na">sidebar</span><span class="pi">:</span> <span class="s">left</span>
-</code></pre></div> </div> </li> <li>图片</li> </ul> <div class="row mt-3"> <div class="col-sm mt-3 mt-md-0"> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/9-480.webp 480w,/assets/img/9-800.webp 800w,/assets/img/9-1400.webp 1400w," sizes="95vw" type="image/webp"/> <img src="/assets/img/9.jpg" class="img-fluid rounded z-depth-1" width="100%" height="auto" loading="eager" onerror="this.onerror=null; $('.responsive-img-srcset').remove();"/> </picture> </figure> </div> <div class="col-sm mt-3 mt-md-0"> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/7-480.webp 480w,/assets/img/7-800.webp 800w,/assets/img/7-1400.webp 1400w," sizes="95vw" type="image/webp"/> <img src="/assets/img/7.jpg" class="img-fluid rounded z-depth-1" width="100%" height="auto" loading="eager" onerror="this.onerror=null; $('.responsive-img-srcset').remove();"/> </picture> </figure> </div> </div> <div class="caption"> A simple, elegant caption looks good between image rows, after each row, or doesn't have to be there at all. </div> <p>Images can be made zoomable. Simply add <code class="language-plaintext highlighter-rouge">data-zoomable</code> to <code class="language-plaintext highlighter-rouge">&lt;img&gt;</code> tags that you want to make zoomable.</p> <div class="row mt-3"> <div class="col-sm mt-3 mt-md-0"> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/8-480.webp 480w,/assets/img/8-800.webp 800w,/assets/img/8-1400.webp 1400w," sizes="95vw" type="image/webp"/> <img src="/assets/img/8.jpg" class="img-fluid rounded z-depth-1" width="100%" height="auto" data-zoomable="" loading="eager" onerror="this.onerror=null; $('.responsive-img-srcset').remove();"/> </picture> </figure> </div> <div class="col-sm mt-3 mt-md-0"> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/10-480.webp 480w,/assets/img/10-800.webp 800w,/assets/img/10-1400.webp 1400w," sizes="95vw" type="image/webp"/> <img src="/assets/img/10.jpg" class="img-fluid rounded z-depth-1" width="100%" height="auto" data-zoomable="" loading="eager" onerror="this.onerror=null; $('.responsive-img-srcset').remove();"/> </picture> </figure> </div> </div> <p>The rest of the images in this post are all zoomable, arranged into different mini-galleries.</p> <div class="row mt-3"> <div class="col-sm mt-3 mt-md-0"> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/11-480.webp 480w,/assets/img/11-800.webp 800w,/assets/img/11-1400.webp 1400w," sizes="95vw" type="image/webp"/> <img src="/assets/img/11.jpg" class="img-fluid rounded z-depth-1" width="100%" height="auto" data-zoomable="" loading="lazy" onerror="this.onerror=null; $('.responsive-img-srcset').remove();"/> </picture> </figure> </div> <div class="col-sm mt-3 mt-md-0"> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/12-480.webp 480w,/assets/img/12-800.webp 800w,/assets/img/12-1400.webp 1400w," sizes="95vw" type="image/webp"/> <img src="/assets/img/12.jpg" class="img-fluid rounded z-depth-1" width="100%" height="auto" data-zoomable="" loading="lazy" onerror="this.onerror=null; $('.responsive-img-srcset').remove();"/> </picture> </figure> </div> <div class="col-sm mt-3 mt-md-0"> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/7-480.webp 480w,/assets/img/7-800.webp 800w,/assets/img/7-1400.webp 1400w," sizes="95vw" type="image/webp"/> <img src="/assets/img/7.jpg" class="img-fluid rounded z-depth-1" width="100%" height="auto" data-zoomable="" loading="lazy" onerror="this.onerror=null; $('.responsive-img-srcset').remove();"/> </picture> </figure> </div> </div> <ul> <li>重定向 <div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">  ---</span>
-  layout: post
-  title: a post with redirect
-  date: 2022-02-01 17:39:00
-  description: you can also redirect to assets like pdf
-  redirect: /assets/pdf/example_pdf.pdf
-<span class="p">  ---
-</span>
-  Redirecting to another page.
-</code></pre></div> </div> </li> <li> <p>mermaid 生成图</p> <div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    
-  sequenceDiagram
-      participant John
-      participant Alice
-      Alice-&gt;&gt;John: Hello John, how are you?
-      John--&gt;&gt;Alice: Great!
-
-</code></pre></div> </div> </li> <li>Check List <div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">      -</span> [x] Brush Teeth
-<span class="p">      -</span> [ ] Put on socks
-<span class="p">        -</span> [x] Put on left sock
-<span class="p">        -</span> [ ] Put on right sock
-<span class="p">      -</span> [x] Go to school
-</code></pre></div> </div> </li> <li> <p>tabs</p> <ul id="data-struct" class="tab" data-tab="a1480d44-3a37-42dc-b8d0-d7df8a1229fb" data-name="data-struct"> <li class="active" id="data-struct-yaml"> <a href="#">yaml </a> </li> <li id="data-struct-json"> <a href="#">json </a> </li> </ul> </li> </ul> <p>&lt;/ul&gt;</p> <ul class="tab-content" id="a1480d44-3a37-42dc-b8d0-d7df8a1229fb" data-name="data-struct"> <li class="active"> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>```yaml
-hello:
-  - "whatsup"
-  - "hi"
-```
-</code></pre></div></div> </li> <li> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>```json
-{
-  "hello": ["whatsup", "hi"]
-}
-```
-</code></pre></div></div> </li> </ul> <ul> <li>引用 <div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  categories: sample-posts
-  citation: true  ##可以引用
-<span class="p">  ---
-</span></code></pre></div> </div> </li> <li>tikzjax <ul> <li>可以生成图片 <div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  tikzjax: true
-<span class="p">  ---
-</span></code></pre></div> </div> </li> </ul> <script type="text/tikz">
-  \begin{tikzpicture}
-      \draw[red,fill=black!60!red] (0,0) circle [radius=1.5];
-      \draw[green,fill=black!60!green] (0,0) circle [x radius=1.5cm, y radius=10mm];
-      \draw[blue,fill=black!60!blue] (0,0) circle [x radius=1cm, y radius=5mm, rotate=30];
-  \end{tikzpicture}
-  </script> </li> </ul>]]></content><author><name></name></author><category term="Environment-Building"/><category term="Environment-Building"/><summary type="html"><![CDATA[Build pages by Jekyll + Github pages]]></summary></entry></feed>
+</span></code></pre></div></div>]]></content><author><name></name></author><category term="Algorithm"/><summary type="html"><![CDATA[代码随想录算法训练营第一天]]></summary></entry></feed>
