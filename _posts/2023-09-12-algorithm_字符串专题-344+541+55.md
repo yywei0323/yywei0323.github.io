@@ -114,3 +114,44 @@ def main():
 if __name__ == '__main__':
     main()
 ```
+
+
+# 55.右旋转字符串
+## 题目
+字符串的右旋转操作是把字符串尾部的若干个字符转移到字符串的前面。给定一个字符串 s 和一个正整数 k，请编写一个函数，将字符串中的后面 k 个字符移到字符串的前面，实现字符串的右旋转操作。
+
+例如，对于输入字符串 "abcdefg" 和整数 2，函数应该将其转换为 "fgabcde"。
+
+
+## 题解：
+- 思路1：直接重新拼接字符串 从`k%len`划分开拼接；
+- 思路2：反转两次=没有反转-> 整体反向+前后分别反向
+
+
+## 题解代码
+```python
+num = input()
+str_ = input()
+num = int(num)
+
+def righerreverse(num,str_):
+    str_ = str_[::-1]
+    res_str = str_[0:num][::-1]+str_[num:][::-1]
+    return res_str
+
+res_str = righerreverse(num,str_)
+print(res_str)
+```
+```python
+def main():
+    data = list(input())
+    for i in range(len(data)):
+        if "a"<=data[i]<="z":
+            continue
+        else:
+            data[i] = "number"
+    print("".join(data))
+    
+if __name__ == '__main__':
+    main()
+```

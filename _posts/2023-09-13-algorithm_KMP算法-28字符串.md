@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 28字符串匹配；重复字符串；
+title: KMP算法-28字符串匹配+重复字符串
 date: 2023-09-13 20:40:16
 description: 代码随想录算法训练营第九天
 tags: Algorithm
@@ -29,7 +29,8 @@ toc:
 ## 题解方法——KMP
 - next数组：最大相同前后缀数组 next\[i\]代表needle第i个字符的最大相同前后缀
 - 获取next数组：
-    - 判断当前字符串是否
+    - 判断当前字符串是否有重合
+    - 如果没有回退到上一个字符的最大相同前后缀处
 
 # 题解代码
 ```python
@@ -59,14 +60,17 @@ class Solution:
                 return i-len(needle)+1
         return -1
 ```
-# 替换数字
+
+
+## 459.重复字符串
 
 ## 题目
-给定一个字符串 s，它包含小写字母和数字字符，请编写一个函数，将字符串中的字母字符保持不变，而将每个数字字符替换为number。 例如，对于输入字符串 "a1b2c3"，函数应该将其转换为 "anumberbnumbercnumber"。
+给定一个非空的字符串 s ，检查是否可以通过由它的一个子串重复多次构成
 
 ## 题解
-- 字符串不能直接在原位修改转为列表
-- 字符串本身可以比大小
+- 方案1:移动匹配法：如果由重复字符串组成`s[1:]+s[-1]=s`成立；
+- 方案2
+    - 计算next_数组；如果最大相同前后缀 相差值 能%==0 说明刚好差一个原子值；
 
 ## 题解代码
 ```python
@@ -83,42 +87,3 @@ if __name__ == '__main__':
     main()
 ```
 
-# 55.右旋转字符串
-## 题目
-字符串的右旋转操作是把字符串尾部的若干个字符转移到字符串的前面。给定一个字符串 s 和一个正整数 k，请编写一个函数，将字符串中的后面 k 个字符移到字符串的前面，实现字符串的右旋转操作。
-
-例如，对于输入字符串 "abcdefg" 和整数 2，函数应该将其转换为 "fgabcde"。
-
-
-## 题解：
-- 思路1：直接重新拼接字符串 从`k%len`划分开拼接；
-- 思路2：反转两次=没有反转-> 整体反向+前后分别反向
-
-
-## 题解代码
-```python
-num = input()
-str_ = input()
-num = int(num)
-
-def righerreverse(num,str_):
-    str_ = str_[::-1]
-    res_str = str_[0:num][::-1]+str_[num:][::-1]
-    return res_str
-
-res_str = righerreverse(num,str_)
-print(res_str)
-```
-```python
-def main():
-    data = list(input())
-    for i in range(len(data)):
-        if "a"<=data[i]<="z":
-            continue
-        else:
-            data[i] = "number"
-    print("".join(data))
-    
-if __name__ == '__main__':
-    main()
-```
