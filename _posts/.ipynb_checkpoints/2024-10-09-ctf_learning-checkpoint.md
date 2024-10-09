@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 【CISSP&CISP】- 学习资料 
+title: 【CISSP】- 学习资料 
 date: 2024-09-20 16:10:16
 description: 
 tags: Security
@@ -10,13 +10,6 @@ pretty_table: true
 toc:
     sidebar: left
 ---
-
-# CISP
->
->刷题平台:https://www.zaixiankaoshi.com/online/paper/detail/?paperid=3231392
->
-
-# CISSP
 
 >
 >[不报辅导班一次性通过CISSP经验分享](https://blog.csdn.net/u013129300/article/details/134344328)
